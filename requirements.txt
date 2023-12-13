@@ -2,4 +2,4 @@ numpy
 pandas
 streamlit
 transformers
-matplotlib.pyplot
+matplotlib
