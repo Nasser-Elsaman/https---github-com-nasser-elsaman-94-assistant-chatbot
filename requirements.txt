@@ -3,3 +3,6 @@ pandas
 streamlit
 transformers
 matplotlib
+torch
+torchvision
+torchaudio
