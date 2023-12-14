@@ -129,6 +129,7 @@ def questionnaire():
             sheet.append_row(answers)       
 if __name__ == "__main__":
     questionnaire()
+# Footer Format
 footer="""<style>
 a:link , a:visited{
 color: blue;
@@ -153,10 +154,12 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.elsamaninfo.wordpress.com/" target="_blank">Nasser Elsaman</a></p>
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://elsamaninfo.wordpress.com/" target="_blank">Nasser Elsaman</a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
+
+# Hamburger Menu
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
