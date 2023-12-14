@@ -6,7 +6,7 @@ import numpy as np
 from transformers import BertTokenizer, BertForSequenceClassification
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
