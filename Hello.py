@@ -126,7 +126,34 @@ def questionnaire():
             radar_chart(personality_prediction)
             sheet = spreadsheet.sheet1
             # Append answers as one row
-            sheet.append_row(answers)
-        
+            sheet.append_row(answers)       
 if __name__ == "__main__":
     questionnaire()
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: black;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: blacck;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: black;
+color: red;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.elsamaninfo.wordpress.com/" target="_blank">Nasser Elsaman</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
