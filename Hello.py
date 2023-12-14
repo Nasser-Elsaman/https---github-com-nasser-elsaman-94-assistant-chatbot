@@ -6,7 +6,7 @@ import numpy as np
 from transformers import BertTokenizer, BertForSequenceClassification
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124", scope)
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
@@ -55,33 +55,33 @@ def radar_chart(personality_prediction):
 
 def questionnaire():
 
-    st.header("Personality Questionnaire", divider="rainbow")
+    st.title("Personality Assessment")
 
     # Introduction
     st.subheader("Please fill out the following questionnaire to help us understand your preferences.")
 
     # Questions
     questions = [
-        "I am the life of the party",
-        "I sympathize with others’ feelings",
-        "I get chores done right away",
-        "I have frequent mood swings",
-        "I have a vivid imagination",
-        "I don’t talk a lot",
-        "I am not interested in other people’s problems",
-        "I often forget to put things back in their proper place",
-        "I am relaxed most of the time",
-        "I am not interested in abstract ideas",
-        "I talk to a lot of different people at parties",
-        "I feel others’ emotions",
-        "I like order",
-        "I get upset easily",
-        "I have difficulty understanding abstract ideas",
-        "I keep in the background",
+        "I am the life of the party.",
+        "I sympathize with others’ feelings.",
+        "I get chores done right away.",
+        "I have frequent mood swings.",
+        "I have a vivid imagination.",
+        "I don’t talk a lot.",
+        "I am not interested in other people’s problems.",
+        "I often forget to put things back in their proper place.",
+        "I am relaxed most of the time.",
+        "I am not interested in abstract ideas.",
+        "I talk to a lot of different people at parties.",
+        "I feel others’ emotions.",
+        "I like order.",
+        "I get upset easily.",
+        "I have difficulty understanding abstract ideas.",
+        "I keep in the background.",
         "I am not really interested in others",
-        "I make a mess of things",
-        "I seldom feel blue",
-        "I do not have a good imagination"
+        "I make a mess of things.",
+        "I seldom feel blue.",
+        "I do not have a good imagination."
     ]
 
     # Collect answers
@@ -97,21 +97,20 @@ def questionnaire():
     merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
  
     # Submit button
-  
+    if 'disabled' not in st.session_state:
+        st.session_state.disabled = False
+    
     # Check if all questions are answered
     if None in answers:
         st.error("Please answer all 20 questions before submitting.")
     else:
-        submit_button = st.button("Submit", key="Submit", disabled= False)
+        # Display the button with the disabled state from session state
+        submit_button = st.button("Submit", key="Submit", disabled=st.session_state.disabled)
+        # Check if the button is clicked
         if submit_button:
-            st.session_state.disabled= True
+            # Update session state to disable the button
+            st.session_state.disabled = True
             st.success("Thank you for completing the questionnaire!")
-        # if st.session_state.get("Submit", False):
-        #     st.session_state.disabled = True
-        #     st.success("Thank1 you for completing the questionnaire!")
-        # elif st.session_state.get("Submit", True):
-        #     st.session_state.disabled = True
-        #     st.success("Thank2 you for completing the questionnaire!")   
             
             # Display merged responses
             st.write("Your Responses:")
