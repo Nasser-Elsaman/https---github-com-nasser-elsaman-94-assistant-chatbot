@@ -34,7 +34,7 @@ def radar_chart(personality_prediction):
     values += [values[0]]
     angles += [angles[0]]
 
-    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='black'))  # Set background color to black
 
     ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
     ax.fill(angles, values, color='blue', alpha=0.4)
@@ -42,14 +42,14 @@ def radar_chart(personality_prediction):
     # Add radial gridlines
     ax.set_yticklabels([])
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(labels)
+    ax.set_xticklabels(labels, color='white')  # Set labels color to white
 
     # Add range numbers on the radar chart
     range_numbers = np.linspace(0, 1, 5)
     ax.set_yticks(range_numbers)
-    ax.set_yticklabels([f"{num:.1%}" for num in range_numbers])
+    ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='white')  # Set range numbers color to white
 
-    plt.title("Personality Traits Radar Chart", size=16, color='blue', y=1.1)
+    plt.title("Personality Traits Radar Chart", size=16, color='white', y=1.1)  # Set title color to white
 
     st.pyplot(fig)
 
