@@ -1,8 +1,10 @@
+streamlit
 numpy
 pandas
-streamlit
-transformers
 matplotlib
+transformers
 torch
 torchvision
 torchaudio
+gspread
+oauthclient
