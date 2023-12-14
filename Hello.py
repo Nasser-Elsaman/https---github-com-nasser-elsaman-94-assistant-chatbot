@@ -1,7 +1,14 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 import numpy as np
 from transformers import BertTokenizer, BertForSequenceClassification
+
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124", scope)
+client = gspread.authorize(creds)
+spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 def personality_detection(text):
     tokenizer = BertTokenizer.from_pretrained("Minej/bert-base-personality")
@@ -88,15 +95,24 @@ def questionnaire():
 
     # Merge questions and answers in one sentence
     merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
-
+ 
+    # Submit button
+  
     # Check if all questions are answered
     if None in answers:
         st.error("Please answer all 20 questions before submitting.")
     else:
-        # Submit button
-        if st.button("Submit"):
+        submit_button = st.button("Submit", key="Submit", disabled= False)
+        if submit_button:
+            st.session_state.disabled= True
             st.success("Thank you for completing the questionnaire!")
-
+        # if st.session_state.get("Submit", False):
+        #     st.session_state.disabled = True
+        #     st.success("Thank1 you for completing the questionnaire!")
+        # elif st.session_state.get("Submit", True):
+        #     st.session_state.disabled = True
+        #     st.success("Thank2 you for completing the questionnaire!")   
+            
             # Display merged responses
             st.write("Your Responses:")
             st.write(merged_responses)
@@ -107,9 +123,11 @@ def questionnaire():
             # Display personality predictions
             st.write("Personality Predictions:")
             st.write(personality_prediction)
-
             # Draw radar chart
             radar_chart(personality_prediction)
-
+            sheet = spreadsheet.sheet1
+            # Append answers as one row
+            sheet.append_row(answers)
+        
 if __name__ == "__main__":
     questionnaire()
