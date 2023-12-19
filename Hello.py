@@ -124,7 +124,7 @@ def questionnaire():
 
         answers.append(answer)
 
-        merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
+    merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
 
  
     # Submit button
