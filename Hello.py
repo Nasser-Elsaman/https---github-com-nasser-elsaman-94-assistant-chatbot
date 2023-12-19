@@ -102,7 +102,7 @@ def questionnaire():
     # reverse_questions = [5, 8, 10, 11, 12, 18, 19]
     # answers = []
 
-    reverse_questions = [5, 8, 10, 11, 12, 18, 19]
+    reverse_questions = [6, 7, 8, 9, 10, 15, 16, 17, 18, 19, 20]
     answers = []
 
     for i, question in enumerate(questions, start=1):
