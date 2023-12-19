@@ -8,3 +8,4 @@ torchvision
 torchaudio
 gspread
 oauth2client
+aa
