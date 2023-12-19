@@ -108,19 +108,18 @@ def questionnaire():
         st.markdown("--------------------------------------------------------------")
         st.write(f"**{i}**. {question}")
     
-        answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], 
+        answer = st.radio ("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
                       key=f"question_{i}", index=None, horizontal=True)
                       
-        if i in reverse_questions:
+        if j in reverse_questions:
             if answer == "Strongly Disagree":
                 answer = "Strongly Agree"
             elif answer == "Disagree":
                 answer = "Agree"
             elif answer == "Agree":
-                answer = "Disagree" 
+                answer = "Disagree"
             elif answer == "Strongly Agree":
                 answer = "Strongly Disagree"
-            
         answers.append(answer)
 
     merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
