@@ -88,19 +88,19 @@ def questionnaire():
     ]
 
     # Collect answers
-    answers = []
-    for i, question in enumerate(questions, start=1):
-        st.markdown("--------------------------------------------------------------")
-        st.write(f"**{i}**. {question}")
+    # answers = []
+    # for i, question in enumerate(questions, start=1):
+    #     st.markdown("--------------------------------------------------------------")
+    #     st.write(f"**{i}**. {question}")
         
-        answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", index=None, horizontal=True)
-        answers.append(answer)
+    #     answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", index=None, horizontal=True)
+    #     answers.append(answer)
 
-        Merge questions and answers in one sentence
-    merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
+    #     Merge questions and answers in one sentence
+    # merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
 
-    reverse_questions = [5, 8, 10, 11, 12, 18, 19]
-    answers = []
+    # reverse_questions = [5, 8, 10, 11, 12, 18, 19]
+    # answers = []
 
 for i, question in enumerate(questions, start=1):
     st.markdown("--------------------------------------------------------------")
