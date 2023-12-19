@@ -103,26 +103,28 @@ def questionnaire():
 
     answers = []
 
-    for i, question in enumerate(questions, start=1):
+for i, question in enumerate(questions, start=1):
+    st.markdown("--------------------------------------------------------------")
+    st.write(f"**{i}**. {question}")
 
-        st.markdown("--------------------------------------------------------------")
-        st.write(f"**{i}**. {question}")
-    
-        answer = st.radio ("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
-                      key=f"question_{i}", index=None, horizontal=True)
-                      
-        if j in reverse_questions:
-            if answer == "Strongly Disagree":
-                answer = "Strongly Agree"
-            elif answer == "Disagree":
-                answer = "Agree"
-            elif answer == "Agree":
-                answer = "Disagree"
-            elif answer == "Strongly Agree":
-                answer = "Strongly Disagree"
-        answers.append(answer)
+    answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+                     key=f"question_{i}", index=None, horizontal=True)
 
-    merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
+    # Check if the current question needs reversing
+    if i in reverse_questions:
+        if answer == "Strongly Disagree":
+            answer = "Strongly Agree"
+        elif answer == "Disagree":
+            answer = "Agree"
+        elif answer == "Agree":
+            answer = "Disagree"
+        elif answer == "Strongly Agree":
+            answer = "Strongly Disagree"
+
+    answers.append(answer)
+
+merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
+
  
     # Submit button
     if 'disabled' not in st.session_state:
