@@ -102,6 +102,9 @@ def questionnaire():
     # reverse_questions = [5, 8, 10, 11, 12, 18, 19]
     # answers = []
 
+reverse_questions = [5, 8, 10, 11, 12, 18, 19]
+answers = []
+
 for i, question in enumerate(questions, start=1):
     st.markdown("--------------------------------------------------------------")
     st.write(f"**{i}**. {question}")
@@ -122,6 +125,7 @@ for i, question in enumerate(questions, start=1):
     answers.append(answer)
 
 merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
+
  
     # Submit button
     if 'disabled' not in st.session_state:
