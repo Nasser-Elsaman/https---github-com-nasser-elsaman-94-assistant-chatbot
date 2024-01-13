@@ -94,7 +94,7 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
 
 def radar_chart(personality_prediction):
   labels = list(personality_prediction.keys())
-  values = list(personality_prediction2.values())
+  values = list(personality_prediction.values())
   N = len(labels)
   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
   
