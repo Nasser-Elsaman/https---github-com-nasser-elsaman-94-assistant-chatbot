@@ -79,35 +79,34 @@ def circular_barplot(personality_prediction):
   # Calculate angles
   num_vars = len(labels)
   angles = np.linspace(0.05, 2*np.pi- 0.05, num_vars, endpoint=False)
-    # Figure 
-    fig, ax = plt.subplots(figsize=(8,8), subplot_kw={'polar': True})
-    fig.set_facecolor('white')
-    ax.set_facecolor('white')
+  # Figure 
+  fig, ax = plt.subplots(figsize=(8,8), subplot_kw={'polar': True})
+  fig.set_facecolor('white')
+  ax.set_facecolor('white')
     
-    # Bars
-    bars = ax.bar(angles, values, width=0.5, color='#645F8C')
+  # Bars
+  bars = ax.bar(angles, values, width=0.5, color='#645F8C')
     
-    # Bar labels
-    for bar, angle, label in zip(bars, angles, labels):
-      rotation = np.rad2deg(angle)
-      alignment = 'center' if -90 < rotation < 90 else 'right'
-      ax.text(angle, 1.1, label, ha=alignment, va='center',  
-              rotation=rotation, rotation_mode='anchor', color='w', fontsize=12) 
+  # Bar labels
+  for bar, angle, label in zip(bars, angles, labels):
+    rotation = np.rad2deg(angle)
+    alignment = 'center' if -90 < rotation < 90 else 'right'
+    ax.text(angle, 1.1, label, ha=alignment, va='center', rotation=rotation, rotation_mode='anchor', color='w', fontsize=12)
     
-    # Title  
-    ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
-    
-    # Background
-    ax.patch.set_alpha(0)  
-    ax.set_theta_offset(np.pi / 2)
-    ax.set_theta_direction(-1)
-    
-    # Remove axes
-    ax.set_yticklabels([])
-    ax.set_yticks([])
-    
-    # Show plot
-    st.pyplot(fig)
+ # Title
+ ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
+
+# Background
+ax.patch.set_alpha(0)
+ax.set_theta_offset(np.pi / 2)
+ax.set_theta_direction(-1)
+
+# Remove axes
+ax.set_yticklabels([])
+ax.set_yticks([])
+
+# Show plot
+st.pyplot(fig)
 
 
   # # Create figure
