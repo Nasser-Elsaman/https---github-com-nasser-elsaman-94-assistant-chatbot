@@ -33,6 +33,31 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
     result = {label_names[i]: f"{predictions[i]*100:.0f}%" for i in range(len(label_names))}
 
     return result
+
+def personality_detection2(text, threshold=0.01, endpoint= 1.0):
+    tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
+    model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
+
+    inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
+    outputs = model(**inputs)
+    predictions = outputs.logits.squeeze().detach().numpy()
+
+    # Get raw logits
+    logits = model(**inputs).logits
+
+    # Apply sigmoid to squash between 0 and 1
+    probabilities = torch.sigmoid(logits)
+
+    # # Set values less than the threshold to zero
+    predictions[predictions < threshold] = 0.01
+    predictions[predictions > endpoint] = 1.0
+
+    label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
+    result = {label_names[i]: f"{predictions[i]*100:.0f}%" for i in range(len(label_names))}
+    # Get values 
+    values = list(result.values())
+    
+    return values
     
 # def radar_chart(personality_prediction):
 #     labels = list(personality_prediction.keys())
@@ -68,8 +93,8 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
 #     st.pyplot(fig)
 
 def radar_chart(personality_prediction):
-  labels = list(personality_prediction.keys())
-  values = list(personality_prediction.values())
+  labels = list(personality_prediction1.keys())
+  values = list(personality_prediction2.values())
   N = len(labels)
   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
   
