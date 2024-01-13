@@ -26,7 +26,7 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
     probabilities = torch.sigmoid(logits)
 
     # Set values less than the threshold to zero
-    predictions[predictions < threshold] = 0.0
+    predictions[predictions < threshold] = 0.0001
     predictions[predictions > endpoint] = 1.0
 
     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
