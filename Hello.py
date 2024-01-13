@@ -11,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-def personality_detection(text, threshold=0.45, endpoint= 1.0):
+def personality_detection(text, threshold=0.0, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     
