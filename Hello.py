@@ -38,7 +38,7 @@ def radar_chart(personality_prediction):
     labels = list(personality_prediction.keys())
     
     # Map 0 values to epsilon
-    epsilon = 0.001
+    epsilon = 1
     values = [v if v != 0 else epsilon for v in personality_prediction.values()]
     
     num_vars = len(labels)
