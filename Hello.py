@@ -92,7 +92,7 @@ def radar_chart(personality_prediction):
   ax.fill(angles, values, "yellow" , alpha=0.2)
   ax.spines['polar'].set_visible(False)
   plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black    
-  st.pyplot(fig)
+  st.pyplot(plt)
 
 # def circular_barplot(personality_prediction):
 
