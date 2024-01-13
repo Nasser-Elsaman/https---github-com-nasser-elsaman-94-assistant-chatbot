@@ -84,11 +84,9 @@ def radar_chart(personality_prediction):
   # Draw one axe per variable + add labels
   plt.xticks(angles[:-1], labels, color='grey', size=10)
   ax.tick_params(axis='x', which='major', pad=15)
-
- 
   
   # Plot data
-  ax.plot(angles, values, linewidth=1, linestyle='solid',color=col)
+  ax.plot(angles, values, linewidth=1, linestyle='solid',color="green)
 
   # Fill area
   ax.fill(angles, values, col , alpha=0.2)
