@@ -44,9 +44,8 @@ def radar_chart(personality_prediction):
     # Include the first element of the list to close the circular graph
     values += [values[0]]
     angles += [angles[0]]
-
-    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))  # Set background color to white
     
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))  # Set background color to white
     ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
     ax.fill(angles, values, color='blue', alpha=0.4)
     
@@ -62,7 +61,6 @@ def radar_chart(personality_prediction):
     
     # Remove the outer box (spines)
     ax.spines['polar'].set_visible(False)
-    
     plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1)  # Set title color to black
     
     st.pyplot(fig)    
