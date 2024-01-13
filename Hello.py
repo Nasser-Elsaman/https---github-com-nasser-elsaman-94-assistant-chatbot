@@ -34,41 +34,76 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
 
     return result
     
-def radar_chart(personality_prediction):
-    labels = list(personality_prediction.keys())
-    values = list(personality_prediction.values())
-    # Map 0 values to epsilon
-    # epsilon = 1
-    # values = [v if v != 0 else epsilon for v in personality_prediction.values()]
+# def radar_chart(personality_prediction):
+#     labels = list(personality_prediction.keys())
+#     values = list(personality_prediction.values())
+#     # Map 0 values to epsilon
+#     # epsilon = 1
+#     # values = [v if v != 0 else epsilon for v in personality_prediction.values()]
     
-    num_vars = len(labels)
-    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+#     num_vars = len(labels)
+#     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
 
-    # Include the first element of the list to close the circular graph
-    values += [values[0]]
-    angles += [angles[0]]
+#     # Include the first element of the list to close the circular graph
+#     values += [values[0]]
+#     angles += [angles[0]]
     
-    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
+#     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
     
-    # Set background color to white
-    ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
-    ax.fill(angles, values, color='blue', alpha=0.4)
+#     # Set background color to white
+#     ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
+#     ax.fill(angles, values, color='blue', alpha=0.4)
     
-    # Add radial gridlines
-    ax.set_yticklabels([])
-    ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(labels, color='black') # Set labels color to black
+#     # Add radial gridlines
+#     ax.set_yticklabels([])
+#     ax.set_xticks(angles[:-1])
+#     ax.set_xticklabels(labels, color='black') # Set labels color to black
     
-    # Add range numbers on the radar chart
-    range_numbers = np.linspace(0, 1, 5)
-    ax.set_yticks(range_numbers)
-    ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
+#     # Add range numbers on the radar chart
+#     range_numbers = np.linspace(0, 1, 5)
+#     ax.set_yticks(range_numbers)
+#     ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
     
-    # Remove the outer box (spines)
-    ax.spines['polar'].set_visible(False)
-    plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
+#     # Remove the outer box (spines)
+#     ax.spines['polar'].set_visible(False)
+#     plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
     
-    st.pyplot(fig)    
+#     st.pyplot(fig) 
+
+import matplotlib.pyplot as plt
+
+def circular_barplot(personality_prediction):
+
+  # Get data
+  labels = list(personality_prediction.keys()) 
+  values = list(personality_prediction.values())
+
+  # Calculate angles
+  num_vars = len(labels)
+  angles = np.linspace(0, 2*np.pi, num_vars, endpoint=False)
+
+  # Create figure
+  fig, ax = plt.subplots(subplot_kw={'polar': True})
+
+  # Draw bars
+  bars = ax.bar(angles, values, width=0.5, bottom=0.1)
+
+  # Customize bars
+  for bar, angle, label in zip(bars, angles, labels):
+    bar.set_facecolor('#4C72B0') 
+    bar.set_alpha(0.8)
+    ax.text(angle, 0.35, label, ha='center', va='center')
+
+  # Remove ticks and labels
+  ax.set_yticklabels([])
+  ax.set_yticks([])
+
+  # Set title
+  ax.set_title("Personality Traits", size=18, y=1.08)
+
+  # Show plot
+  plt.show()
+
 
 def questionnaire():
     st.title("Personality Assessment")
@@ -167,7 +202,7 @@ def questionnaire():
             st.write("Personality Predictions:")
             st.write(personality_prediction)
             # Draw radar chart
-            radar_chart(personality_prediction)
+            circular_barplot(personality_prediction)
             sheet = spreadsheet.sheet1
             # Append answers as one row
             sheet.append_row(answers)       
