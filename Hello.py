@@ -34,34 +34,46 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
 
     return result
 def radar_chart(predictions):
-  
-  # Map zeros to epsilon
+
+  # Map 0 values to epsilon
   epsilon = 0.001
   values = [v if v != 0 else epsilon for v in predictions.values()]
   
   labels = list(predictions.keys())
-  num_vars = len(labels)
-  
-  angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False) 
-  
-  fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True)) 
 
-  ax.plot(angles, values, color='blue')
+  # Calculate number of variables
+  num_vars = len(labels)
+
+  # Calculate the angles for each axis
+  angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False)
+
+  # Create subplot
+  fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+
+  # Plot the data
+  ax.plot(angles, values, color='b')
   ax.fill(angles, values, alpha=0.25)
 
-  ax.set_theta_offset(np.pi / 2)
+  # Set theta offset and direction
+  ax.set_theta_offset(np.pi / 2) 
   ax.set_theta_direction(-1)
 
+  # Set position of y-labels
   ax.set_rlabel_position(0)
-  ax.set_xticks(angles[:-1])
-  ax.set_xticklabels(labels)
-
-  values += values[:1]
-  angles += angles[:1]
-
-  ax.plot(angles, values)
   
-  st.pyplot(fig)
+  # Set ticks and labels
+  ax.set_xticks(angles)
+  ax.set_xticklabels(labels)
+  
+  # Close radar plot 
+  values.append(values[0])
+  angles.append(angles[0])
+  ax.plot(angles, values)
+
+  # Show plot
+  plt.show()
+  plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
+  st.pyplot(fig) 
 
 # def radar_chart(personality_prediction):
 #     labels = list(personality_prediction.keys())
