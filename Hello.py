@@ -34,7 +34,7 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
 
     return result
 
-def personality_detection2(text, threshold=0.01, endpoint= 1.0):
+def personality_detection2(text, threshold=0.1, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
 
@@ -49,7 +49,7 @@ def personality_detection2(text, threshold=0.01, endpoint= 1.0):
     probabilities = torch.sigmoid(logits)
 
     # # Set values less than the threshold to zero
-    predictions[predictions < threshold] = 0.01
+    predictions[predictions < threshold] = 0.1
     predictions[predictions > endpoint] = 1.0
 
     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
