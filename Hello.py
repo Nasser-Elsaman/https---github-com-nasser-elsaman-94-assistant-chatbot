@@ -1,4 +1,5 @@
 import streamlit as st
+import torch
 import matplotlib.pyplot as plt
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
