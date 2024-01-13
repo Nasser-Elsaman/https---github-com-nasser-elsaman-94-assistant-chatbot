@@ -45,7 +45,9 @@ def radar_chart(personality_prediction):
     values += [values[0]]
     angles += [angles[0]]
     
-    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))  # Set background color to white
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
+    
+    # Set background color to white
     ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
     ax.fill(angles, values, color='blue', alpha=0.4)
     
