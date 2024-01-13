@@ -37,23 +37,25 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
 def radar_chart(personality_prediction):
     labels = list(personality_prediction.keys())
     values = list(personality_prediction.values())
+    
+    values_plot = values.copy()
 
     # Add epsilon to zero values
+    # Map 0 to epsilon
     epsilon = 0.001
-    values = [v if v != 0 else epsilon for v in values]
-    
+    values_plot = [v if v != 0 else epsilon for v in values_plot]  
+
+    # Generate angles before modifying values
     num_vars = len(labels)
-    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
-
-    # Include the first element of the list to close the circular graph
-    values += [values[0]]
-    angles += [angles[0]]
-
+    angles = np.linspace(0, 2 * pi, num_vars, endpoint=False)
+    # angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+    
+    # Plot radar chart
     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))  # Set background color to white
+    ax.plot(angles, values_plot, color='blue', linewidth=2, linestyle='solid')
+    ax.fill(angles, values_plot, color='blue', alpha=0.4)
 
-    ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
-    ax.fill(angles, values, color='blue', alpha=0.4)
-
+    # Set ticks, labels, etc
     # Add radial gridlines
     ax.set_yticklabels([])
     ax.set_xticks(angles[:-1])
@@ -67,8 +69,11 @@ def radar_chart(personality_prediction):
     # Remove the outer box (spines)
     ax.spines['polar'].set_visible(False)
 
-    plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1)  # Set title color to black
+    # Append first value and angle to close plot
+    values_plot.append(values_plot[0])
+    angles.append(angles[0])
 
+    # Display plot in Streamlit
     st.pyplot(fig)
     
 def questionnaire():
