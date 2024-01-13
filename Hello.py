@@ -26,7 +26,7 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
     probabilities = torch.sigmoid(logits)
 
     # Set values less than the threshold to zero
-    predictions[predictions < threshold] = 0.45
+    predictions[predictions < threshold] = 0.0
     predictions[predictions > endpoint] = 1.0
 
     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
@@ -87,6 +87,10 @@ def radar_chart(personality_prediction):
   
   # Plot data
   ax.plot(angles, values, linewidth=1, linestyle='solid',color="green")
+  # Add range numbers on the radar chart
+  range_numbers = np.linspace(0, 0.1, 5)
+  ax.set_yticks(range_numbers)
+  ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
 
   # Fill area
   ax.fill(angles, values, "yellow" , alpha=0.2)
