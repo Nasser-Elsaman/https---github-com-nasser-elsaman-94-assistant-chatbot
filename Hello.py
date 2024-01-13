@@ -34,31 +34,6 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
 
     return result
 
-# def personality_detection2(text, threshold=0.1, endpoint= 1.0):
-#     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
-#     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
-
-#     inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
-#     outputs = model(**inputs)
-#     predictions = outputs.logits.squeeze().detach().numpy()
-
-#     # Get raw logits
-#     logits = model(**inputs).logits
-
-#     # Apply sigmoid to squash between 0 and 1
-#     probabilities = torch.sigmoid(logits)
-
-#     # # Set values less than the threshold to zero
-#     predictions[predictions < threshold] = 0.1
-#     predictions[predictions > endpoint] = 1.0
-
-#     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
-#     result = {label_names[i]: f"{predictions[i]*100:.0f}%" for i in range(len(label_names))}
-#     # Get values 
-#     values = list(result.values())
-    
-#     return values
-    
 # def radar_chart(personality_prediction):
 #     labels = list(personality_prediction.keys())
 #     values = list(personality_prediction.values())
@@ -105,16 +80,19 @@ def radar_chart(personality_prediction):
   angles += angles[:1]
 
   # Initialize the polar plot
-  ax = plt.subplot(111, polar=True)
+  fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
+  ax = plt.subplots(figsize=(6, 6), 111, polar=True)
   # Draw one axe per variable + add labels
   plt.xticks(angles[:-1], labels, color='grey', size=10)
   ax.tick_params(axis='x', which='major', pad=15)
   
   # Plot data
+    
   ax.plot(angles, values, linewidth=1, linestyle='solid',color="green")
+  ax.fill(angles, values, color='blue', alpha=0.3)
   # # Add range numbers on the radar chart
-  # range_numbers = np.linspace(0, 0.1, 5)
-  # ax.set_yticks(range_numbers)
+  range_numbers = np.linspace(0, 1, 5)
+  ax.set_yticks(range_numbers)
   # ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
 
   # Fill area
