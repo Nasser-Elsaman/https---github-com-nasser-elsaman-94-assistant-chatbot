@@ -70,8 +70,6 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
     
 #     st.pyplot(fig) 
 
-import matplotlib.pyplot as plt
-
 def circular_barplot(personality_prediction):
 
   # Get data
@@ -100,10 +98,11 @@ def circular_barplot(personality_prediction):
 
   # Set title
   ax.set_title("Personality Traits", size=18, y=1.08)
+  st.pyplot(fig) 
 
   # Show plot
   plt.show()
-
+ 
 
 def questionnaire():
     st.title("Personality Assessment")
