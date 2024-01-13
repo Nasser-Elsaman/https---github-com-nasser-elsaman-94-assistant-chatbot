@@ -11,8 +11,8 @@ client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 def personality_detection(text):
-    tokenizer = BertTokenizer.from_pretrained("Minej/bert-base-personality")
-    model = BertForSequenceClassification.from_pretrained("Minej/bert-base-personality")
+    tokenizer = BertTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality")
+    model = BertForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality")
 
     inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
     outputs = model(**inputs)
