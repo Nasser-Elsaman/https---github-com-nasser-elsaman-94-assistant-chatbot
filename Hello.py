@@ -54,7 +54,7 @@ def radar_chart(personality_prediction):
     # Add radial gridlines
     ax.set_yticklabels([])
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(labels, color='black')  # Set labels color to black
+    ax.set_xticklabels(labels, color='black') # Set labels color to black
     
     # Add range numbers on the radar chart
     range_numbers = np.linspace(0, 1, 5)
