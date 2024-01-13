@@ -34,85 +34,82 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
 
     return result
     
-# def radar_chart(personality_prediction):
-#     labels = list(personality_prediction.keys())
-#     values = list(personality_prediction.values())
-#     # Map 0 values to epsilon
-#     # epsilon = 1
-#     # values = [v if v != 0 else epsilon for v in personality_prediction.values()]
+def radar_chart(personality_prediction):
+    labels = list(personality_prediction.keys())
+    values = list(personality_prediction.values())
     
-#     num_vars = len(labels)
-#     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+    num_vars = len(labels)
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
 
-#     # Include the first element of the list to close the circular graph
-#     values += [values[0]]
-#     angles += [angles[0]]
+    # Include the first element of the list to close the circular graph
+    values += [values[0]]
+    angles += [angles[0]]
     
-#     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
     
-#     # Set background color to white
-#     ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
-#     ax.fill(angles, values, color='blue', alpha=0.4)
+    # Set background color to white
+    ax.plot(angles, values, color='blue', linewidth=2, linestyle='solid')
+    ax.fill(angles, values, color='blue', alpha=0.4)
     
-#     # Add radial gridlines
-#     ax.set_yticklabels([])
-#     ax.set_xticks(angles[:-1])
-#     ax.set_xticklabels(labels, color='black') # Set labels color to black
+    # Add radial gridlines
+    ax.set_yticklabels([])
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels, color='black') # Set labels color to black
     
-#     # Add range numbers on the radar chart
-#     range_numbers = np.linspace(0, 1, 5)
-#     ax.set_yticks(range_numbers)
-#     ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
+    # Add range numbers on the radar chart
+    range_numbers = np.linspace(0, 1, 5)
+    ax.set_yticks(range_numbers)
+    ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
     
-#     # Remove the outer box (spines)
-#     ax.spines['polar'].set_visible(False)
-#     plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
+    # Remove the outer box (spines)
+    ax.spines['polar'].set_visible(False)
+    plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
     
-#     st.pyplot(fig) 
+    st.pyplot(fig) 
 
-def circular_barplot(personality_prediction):
+# def circular_barplot(personality_prediction):
 
-  # Get data
-  labels = list(personality_prediction.keys()) 
-  values = list(personality_prediction.values())
+#   # Get data
+#   labels = list(personality_prediction.keys()) 
+#   values = list(personality_prediction.values())
 
-  # Calculate angles
-  num_vars = len(labels)
-  angles = np.linspace(0.05, 2*np.pi- 0.05, num_vars, endpoint=False)
-  # Figure 
-  fig, ax = plt.subplots(figsize=(8,8), subplot_kw={'polar': True})
-  fig.set_facecolor('black')
-  ax.set_facecolor('white')
+#   # Calculate angles
+#   num_vars = len(labels)
+#   angles = np.linspace(0.05, 2*np.pi- 0.05, num_vars, endpoint=False)
+#   # Figure 
+#   fig, ax = plt.subplots(figsize=(8,8), subplot_kw={'polar': True})
+#   fig.set_facecolor('black')
+#   ax.set_facecolor('white')
     
-  # Bars
-  bars = ax.bar(angles, values, width=0.5, color='#645F8C')
+#   # Bars
+#   bars = ax.bar(angles, values, width=0.5, color='#645F8C')
     
-  # Bar labels
-  for bar, angle, label in zip(bars, angles, labels):
-    rotation = np.rad2deg(angle)
-    alignment = 'center' if -90 < rotation < 90 else 'right'
-    ax.text(angle, 1.1, label, ha=alignment, va='center', rotation=rotation, rotation_mode='anchor', color='w', fontsize=12)
+#   # Bar labels
+#   for bar, angle, label in zip(bars, angles, labels):
+#     rotation = np.rad2deg(angle)
+#     alignment = 'center' if -90 < rotation < 90 else 'right'
+#     ax.text(angle, 1.1, label, ha=alignment, va='center', rotation=rotation, rotation_mode='anchor', color='w', fontsize=12)
       
-  # Title
-  ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
+#   # Title
+#   ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
     
-  # Background
-  ax.patch.set_alpha(0)
-  ax.set_theta_offset(np.pi / 2)
-  ax.set_theta_direction(-1)
+#   # Background
+#   ax.patch.set_alpha(0)
+#   ax.set_theta_offset(np.pi / 2)
+#   ax.set_theta_direction(-1)
     
-  # Remove axes
-  # Remove ticks and labels
-  ax.set_xticks(angles)
-  # ax.set_xticklabels(labels, size=13)
-  ax.xaxis.grid(False)
+#   # Remove axes
+#   # Remove ticks and labels
+#   ax.set_xticks(angles)
+#   # ax.set_xticklabels(labels, size=13)
+#   ax.xaxis.grid(False)
     
-  ax.set_yticklabels([])
-  ax.set_yticks([0, 25, 50, 75, 100])
+#   ax.set_yticklabels([])
+#   ax.set_yticks([0, 25, 50, 75, 100])
 
     
-  # Show plot
-  st.pyplot(fig)
+#   # Show plot
+#   st.pyplot(fig)
 
   # # Create figure
   # fig, ax = plt.subplots(figsize=(9,12), subplot_kw={"projection": "polar"})
@@ -256,7 +253,7 @@ def questionnaire():
             st.write("Personality Predictions:")
             st.write(personality_prediction)
             # Draw radar chart
-            circular_barplot(personality_prediction)
+            radar_chart(personality_prediction)
             sheet = spreadsheet.sheet1
             # Append answers as one row
             sheet.append_row(answers)       
