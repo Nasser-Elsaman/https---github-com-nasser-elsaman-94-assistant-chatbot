@@ -48,8 +48,8 @@ def radar_chart(personality_prediction):
     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
     
     # Set background color to white
-    ax.plot(angles, values, color='blue', linewidth=9, linestyle='solid')
-    ax.fill(angles, values, color='blue', alpha=0.4)
+    ax.plot(angles, values, color='blue', linewidth=5, linestyle='solid')
+    ax.fill(angles, values, color='blue', alpha=0.9)
     
     # Add radial gridlines
     ax.set_yticklabels([])
