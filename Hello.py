@@ -19,11 +19,11 @@ def personality_detection(text):
     outputs = model(**inputs)
     predictions = outputs.logits.squeeze().detach().numpy()
 
-    # # Get raw logits
-    # logits = model(**inputs).logits
+    # Get raw logits
+    logits = model(**inputs).logits
 
-    # # Apply sigmoid to squash between 0 and 1
-    # probabilities = torch.sigmoid(logits)
+    # Apply sigmoid to squash between 0 and 1
+    probabilities = torch.sigmoid(logits)
 
     # # Set values less than the threshold to zero
     # predictions[predictions < threshold] = 0.0
