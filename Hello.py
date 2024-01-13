@@ -38,6 +38,10 @@ def radar_chart(personality_prediction):
     labels = list(personality_prediction.keys())
     values = list(personality_prediction.values())
 
+    # Add epsilon to zero values
+    epsilon = 0.001
+    values = [v if v != 0 else epsilon for v in values]
+    
     num_vars = len(labels)
     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
 
