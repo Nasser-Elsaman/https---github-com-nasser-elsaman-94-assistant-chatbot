@@ -11,8 +11,8 @@ client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 def personality_detection(text, threshold=0.0, endpoint= 1.0):
-    tokenizer = AutoTokenizer.from_pretrained("./microsoft-finetuned-personality/")
-    model = AutoModelForSequenceClassification.from_pretrained("./microsoft-finetuned-personality/")
+    tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality/")
+    model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality/")
 
     inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
     outputs = model(**inputs)
