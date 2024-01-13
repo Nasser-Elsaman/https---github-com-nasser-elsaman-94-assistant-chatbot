@@ -88,7 +88,7 @@ def circular_barplot(personality_prediction):
   ax.set_ylim (-1500, 3500)
 
   ax.bar (angles, values, alpha=0.9, width= 0.52, zorder=11)
-  ax.vlines(anngles, 3000, color = GREY12, zorder=11)
+  ax.vlines(angles, 3000, color = GREY12, zorder=11)
 
 
   # # Draw bars
