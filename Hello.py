@@ -146,11 +146,11 @@ def questionnaire():
         st.error("Please answer all 20 questions before submitting.")
     else:
         # Display the button with the disabled state from session state
-        submit_button = st.button("Submit", key="Submit", disabled=st.session_state.disabled)
+        submit_button = st.button("Submit", key="Submit")#, disabled=st.session_state.disabled)
         # Check if the button is clicked
         if submit_button:
             # Update session state to disable the button
-            st.session_state.disabled = False
+            # st.session_state.disabled = True
             st.success("Thank you for completing the questionnaire!")
             
             # Display merged responses
