@@ -159,7 +159,7 @@ def questionnaire():
             st.write(merged_responses)
 
             # Perform personality detection
-            personality_prediction = personality_detection(merged_responses, threshold=0.0, endpoint=1.0)
+            personality_prediction = personality_detection(merged_responses)
             
             # Display personality predictions
             st.write("Personality Predictions:")
