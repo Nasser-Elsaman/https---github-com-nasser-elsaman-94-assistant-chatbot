@@ -35,7 +35,7 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
     return result
 
 def radar_chart(personality_prediction):
-    labels = list(personality_prediction.keys())
+    labels = list(personality_prediction.keys())
     values = list(personality_prediction.values())
 
     num_vars = len(labels)
@@ -66,8 +66,8 @@ def radar_chart(personality_prediction):
     plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1)  # Set title color to black
 
     st.pyplot(fig)    
-def questionnaire():
 
+def questionnaire():
     st.title("Personality Assessment")
 
     # Introduction
