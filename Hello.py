@@ -85,11 +85,7 @@ def radar_chart(personality_prediction):
   plt.xticks(angles[:-1], labels, color='grey', size=10)
   ax.tick_params(axis='x', which='major', pad=15)
 
-  # Draw r axis labels
-  ax.set_rlabel_position(-22.5)
-  plt.yticks(np.linspace(0,max,6), color="grey", size=7)
-  plt.ylim(0,max)
-  
+ 
   
   # Plot data
   ax.plot(angles, values, linewidth=1, linestyle='solid',color=col)
