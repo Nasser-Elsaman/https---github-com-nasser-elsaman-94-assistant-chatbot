@@ -92,22 +92,21 @@ def circular_barplot(personality_prediction):
     rotation = np.rad2deg(angle)
     alignment = 'center' if -90 < rotation < 90 else 'right'
     ax.text(angle, 1.1, label, ha=alignment, va='center', rotation=rotation, rotation_mode='anchor', color='w', fontsize=12)
+      
+  # Title
+  ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
     
- # Title
- ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
-
-# Background
-ax.patch.set_alpha(0)
-ax.set_theta_offset(np.pi / 2)
-ax.set_theta_direction(-1)
-
-# Remove axes
-ax.set_yticklabels([])
-ax.set_yticks([])
-
-# Show plot
-st.pyplot(fig)
-
+  # Background
+  ax.patch.set_alpha(0)
+  ax.set_theta_offset(np.pi / 2)
+  ax.set_theta_direction(-1)
+    
+  # Remove axes
+  ax.set_yticklabels([])
+  ax.set_yticks([])
+    
+  # Show plot
+  st.pyplot(fig)
 
   # # Create figure
   # fig, ax = plt.subplots(figsize=(9,12), subplot_kw={"projection": "polar"})
