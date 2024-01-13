@@ -47,8 +47,12 @@ def radar_chart(personality_prediction):
 
     # Generate angles before modifying values
     num_vars = len(labels)
-    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False)
-    # angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+    # ax.set_xticklabels(labels)
+    # num_ticks = len(labels) 
+    # ax.set_xticks(angles[:-1])
+    # ax.xaxis.set_major_locator(plt.FixedLocator(np.linspace(0, 2*np.pi, num_ticks, endpoint=False)))
+    # angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False)
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
     
     # Plot radar chart
     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))  # Set background color to white
