@@ -9,7 +9,7 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
-Nasserelsaman/microsoft-finetuned-personality
+
 def personality_detection(text, threshold=0.0, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("./Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
     model = AutoModelForSequenceClassification.from_pretrained("./Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
