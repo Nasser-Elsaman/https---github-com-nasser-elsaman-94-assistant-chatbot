@@ -76,7 +76,7 @@ def radar_chart(personality_prediction):
   values += values[:1]
 
   # Determining the angle of each spoke
-  angles = [n / float(N) * 2 * pi for n in range(N)]
+  angles = [n / float(N) * 2 * np.pi for n in range(N)]
   angles += angles[:1]
 
   # Initialize the polar plot
