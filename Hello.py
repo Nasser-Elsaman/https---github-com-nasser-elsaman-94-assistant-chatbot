@@ -11,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-def personality_detection(text, threshold=0.001, endpoint= 1.0):
+def personality_detection(text, threshold=0.01, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     
@@ -26,7 +26,7 @@ def personality_detection(text, threshold=0.001, endpoint= 1.0):
     probabilities = torch.sigmoid(logits)
 
     # Set values less than the threshold to zero
-    predictions[predictions < threshold] = 0.0001
+    predictions[predictions < threshold] = 0.01
     predictions[predictions > endpoint] = 1.0
 
     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
@@ -36,10 +36,10 @@ def personality_detection(text, threshold=0.001, endpoint= 1.0):
     
 def radar_chart(personality_prediction):
     labels = list(personality_prediction.keys())
-    
+    values = list(personality_prediction.values())
     # Map 0 values to epsilon
-    epsilon = 1
-    values = [v if v != 0 else epsilon for v in personality_prediction.values()]
+    # epsilon = 1
+    # values = [v if v != 0 else epsilon for v in personality_prediction.values()]
     
     num_vars = len(labels)
     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
