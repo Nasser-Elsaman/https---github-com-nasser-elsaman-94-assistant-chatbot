@@ -150,7 +150,7 @@ def questionnaire():
         # Check if the button is clicked
         if submit_button:
             # Update session state to disable the button
-            st.session_state.disabled = True
+            st.session_state.disabled = False
             st.success("Thank you for completing the questionnaire!")
             
             # Display merged responses
