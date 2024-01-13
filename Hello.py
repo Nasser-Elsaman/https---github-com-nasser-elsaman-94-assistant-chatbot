@@ -81,7 +81,7 @@ def radar_chart(personality_prediction):
 
   # Initialize the polar plot
   fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
-  ax = plt.subplots(figsize=(6, 6), 111, polar=True)
+  ax = plt.subplots(figsize=(6, 6), polar=True)
   # Draw one axe per variable + add labels
   plt.xticks(angles[:-1], labels, color='grey', size=10)
   ax.tick_params(axis='x', which='major', pad=15)
