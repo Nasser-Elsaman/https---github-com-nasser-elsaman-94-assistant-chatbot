@@ -78,24 +78,45 @@ def circular_barplot(personality_prediction):
 
   # Calculate angles
   num_vars = len(labels)
-  angles = np.linspace(0, 2*np.pi, num_vars, endpoint=False)
+  angles = np.linspace(0.05, 2*np.pi- 0.05, num_vars, endpoint=False)
 
   # Create figure
-  fig, ax = plt.subplots(subplot_kw={'polar': True})
+  fig, ax = plt.subplots(figsize=(9,12), subplot_kw={"projection": "polar"})
+  fig.patch.set_facecolor("white")
+  ax.set_facecolor("white")
+  ax.set_theta_offset (1.2 * np.pi/2)
+  ax.set_ylim (-1500, 3500)
 
-  # Draw bars
-  bars = ax.bar(angles, values, width=0.5, bottom=0.1)
+  ax.bar (angles, values, alpha=0.9, width= 0.52, zorder=11)
+  ax.vlines(anngles, 3000, color = GREY12, zorder=11)
 
-  # Customize bars
-  for bar, angle, label in zip(bars, angles, labels):
-    bar.set_facecolor('#4C72B0') 
-    bar.set_alpha(0.8)
-    ax.text(angle, 0.35, label, ha='center', va='center')
+
+  # # Draw bars
+  # bars = ax.bar(angles, values, width=0.5, bottom=0.1)
+
+  # # Customize bars
+  # for bar, angle, label in zip(bars, angles, labels):
+  #   bar.set_facecolor('#4C72B0') 
+  #   bar.set_alpha(0.8)
+  #   ax.text(angle, 0.35, label, ha='center', va='center')
 
   # Remove ticks and labels
+  ax.set_xticks(angles)
+  ax.set_xticklabels(labels, size=13)
+  ax.xaxis.grid(False)
+    
   ax.set_yticklabels([])
-  ax.set_yticks([])
-
+  ax.set_yticks([0, 25, 50, 75, 100])
+  ax.spines ["start"].set_color ("none")
+  ax.spines ["polar"].set_color ("none")
+  XTICKS = ax.xaxis.get_major_ticks()
+  for tick in XTICKS:
+    tick.set_pad (10)
+  PAD = 10
+  ax.text (-0.2 * np.pi/2, 25 + PAD, "25", ha= "center", size = 12)
+  ax.text (-0.2 * np.pi/2, 25 + PAD, "50", ha= "center", size = 12)
+  ax.text (-0.2 * np.pi/2, 25 + PAD, "75", ha= "center", size = 12)
+  ax.text (-0.2 * np.pi/2, 25 + PAD, "100", ha= "center", size = 12)
   # Set title
   ax.set_title("Personality Traits", size=18, y=1.08)
   st.pyplot(fig) 
