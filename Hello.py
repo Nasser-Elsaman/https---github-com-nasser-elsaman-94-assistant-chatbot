@@ -15,7 +15,7 @@ def personality_detection(text, threshold=0.0, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     
-    inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
+    inputs = tokenizer(text, truncation=275, padding=True, return_tensors="pt")
     outputs = model(**inputs)
     predictions = outputs.logits.squeeze().detach().numpy()
 
