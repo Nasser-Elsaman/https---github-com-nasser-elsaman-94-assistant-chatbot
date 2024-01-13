@@ -90,7 +90,7 @@ def circular_barplot(personality_prediction):
   # Bar labels
   for bar, angle, label in zip(bars, angles, labels):
     rotation = np.rad2deg(angle)
-    alignment = 'center' if 0 < rotation < 90 else 'right'
+    alignment = 'center' if -90 < rotation < 90 else 'right'
     ax.text(angle, 1.1, label, ha=alignment, va='center', rotation=rotation, rotation_mode='anchor', color='w', fontsize=12)
       
   # Title
