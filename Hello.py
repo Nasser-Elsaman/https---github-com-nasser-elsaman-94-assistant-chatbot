@@ -59,7 +59,7 @@ def radar_chart(personality_prediction):
     # Add range numbers on the radar chart
     range_numbers = np.linspace(0, 1, 5)
     ax.set_yticks(range_numbers)
-    ax.set_yticklabels([for num in range_numbers], color='black') # Set range numbers color to black
+    ax.set_yticklabels(for num in range_numbers, color='black') # Set range numbers color to black
     # f"{num:.1%}"
     # Remove the outer box (spines)
     ax.spines['polar'].set_visible(False)
