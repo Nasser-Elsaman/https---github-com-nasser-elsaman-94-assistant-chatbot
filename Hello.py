@@ -104,7 +104,7 @@ def circular_barplot(personality_prediction):
   # Remove axes
   # Remove ticks and labels
   ax.set_xticks(angles)
-  ax.set_xticklabels(labels, size=13)
+  # ax.set_xticklabels(labels, size=13)
   ax.xaxis.grid(False)
     
   ax.set_yticklabels([])
