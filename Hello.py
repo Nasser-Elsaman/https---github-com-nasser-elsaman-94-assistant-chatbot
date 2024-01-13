@@ -81,7 +81,7 @@ def circular_barplot(personality_prediction):
   angles = np.linspace(0.05, 2*np.pi- 0.05, num_vars, endpoint=False)
   # Figure 
   fig, ax = plt.subplots(figsize=(8,8), subplot_kw={'polar': True})
-  fig.set_facecolor('white')
+  fig.set_facecolor('black')
   ax.set_facecolor('white')
     
   # Bars
