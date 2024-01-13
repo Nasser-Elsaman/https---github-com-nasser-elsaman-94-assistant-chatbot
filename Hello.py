@@ -47,7 +47,7 @@ def radar_chart(personality_prediction):
 
     # Generate angles before modifying values
     num_vars = len(labels)
-    angles = np.linspace(0, 2 * pi, num_vars, endpoint=False)
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False)
     # angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
     
     # Plot radar chart
