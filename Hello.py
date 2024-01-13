@@ -89,11 +89,8 @@ def radar_chart(personality_prediction):
   ax.set_rlabel_position(-22.5)
   plt.yticks(np.linspace(0,max,6), color="grey", size=7)
   plt.ylim(0,max)
-  a = ax.get_ygridlines()
-  inc=0.9/len(a)
-  for i in range(len(a)):
-    a[i].set_color((inc*(len(a)-i),inc*(len(a)-i),inc*(len(a)-i)))
-
+  
+  
   # Plot data
   ax.plot(angles, values, linewidth=1, linestyle='solid',color=col)
 
