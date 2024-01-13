@@ -11,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-def personality_detection(text, threshold=0.05, endpoint= 1.0):
+def personality_detection(text, threshold=0.25, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     
@@ -26,7 +26,7 @@ def personality_detection(text, threshold=0.05, endpoint= 1.0):
     probabilities = torch.sigmoid(logits)
 
     # Set values less than the threshold to zero
-    predictions[predictions < threshold] = 0.05
+    predictions[predictions < threshold] = 0.25
     predictions[predictions > endpoint] = 1.0
 
     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
