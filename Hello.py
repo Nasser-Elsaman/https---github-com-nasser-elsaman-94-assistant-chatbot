@@ -1,11 +1,11 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import torch
 import matplotlib.pyplot as plt
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from streamlit_option_menu import option_menu
 import os
 from dotenv import load_dotenv
 
@@ -18,13 +18,8 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-selected = option_menu (
-    menu_title=None,
-    options= ["Home", "Project", "About"],
-    icons= ["house", "book", "file-person"],
-    menu_icon = "cast",
-    default_index=0,
-    orientation = "horizontal",
+selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], icons= ["house", "book", "file-person"],
+    menu_icon = "cast", default_index=0, orientation = "horizontal",
     styles= {"container": {"padding": "0!important", "background-color": "#5c0303"},
              "icon": {"color": "orange", "font-size": "15px"},
              "nav-link": {"font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#aba9a9"},
