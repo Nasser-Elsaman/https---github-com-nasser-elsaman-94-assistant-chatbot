@@ -328,35 +328,35 @@ if on:
                 st.error("Please answer all 20 questions before submitting.")
             else:
             # Display the button with the disabled state from session state
-            submit_button = st.button("Submit", key="Submit") #, disabled=st.session_state.disabled)
-            # Check if the button is clicked
-            if submit_button:
-                # Update session state to disable the button
-                # st.session_state.disabled = True
-                with st.spinner('Loading...'):
-                    time.sleep(3)
-                with st.spinner('In progress...'):
-                    time.sleep(2)
-                with st.spinner('The result will appear in seconds...'):
-                    time.sleep(3)
-                    st.balloons ()
-                    st.success("Thank you for completing the questionnaire!")
-                    
-                    # Display merged responses
-                    st.write("Your Responses:")
-                    st.write(merged_responses)
-        
-                    # Perform personality detection
-                    personality_prediction = personality_detection(merged_responses, threshold=0.05, endpoint= 1.0)
-                    
-                    # Display personality predictions
-                    st.write("Personality Predictions:")
-                    st.write(personality_prediction)
-                    # Draw radar chart
-                    radar_chart(personality_prediction)
-                    sheet = spreadsheet.sheet1
-                    # Append answers as one row
-                    sheet.append_row(answers)       
+                submit_button = st.button("Submit", key="Submit") #, disabled=st.session_state.disabled)
+                # Check if the button is clicked
+                if submit_button:
+                    # Update session state to disable the button
+                    # st.session_state.disabled = True
+                    with st.spinner('Loading...'):
+                        time.sleep(3)
+                    with st.spinner('In progress...'):
+                        time.sleep(2)
+                    with st.spinner('The result will appear in seconds...'):
+                        time.sleep(3)
+                        st.balloons ()
+                        st.success("Thank you for completing the questionnaire!")
+                        
+                        # Display merged responses
+                        st.write("Your Responses:")
+                        st.write(merged_responses)
+            
+                        # Perform personality detection
+                        personality_prediction = personality_detection(merged_responses, threshold=0.05, endpoint= 1.0)
+                        
+                        # Display personality predictions
+                        st.write("Personality Predictions:")
+                        st.write(personality_prediction)
+                        # Draw radar chart
+                        radar_chart(personality_prediction)
+                        sheet = spreadsheet.sheet1
+                        # Append answers as one row
+                        sheet.append_row(answers)       
         if __name__ == "__main__":
             questionnaire()
         
