@@ -28,7 +28,7 @@ if "model" not in st.session_state:
 
 st.session_state.model = st.sidebar.radio(
     "Select a model",
-    ("Nasserelsaman/microsoft-finetuned-personality", "Minej/bert-base-personality"),
+    ("Nasserelsaman/microsoft-finetuned-personality",""),
     index=0 if st.session_state["model"] == "Nasserelsaman/microsoft-finetuned-personality" else 1,
     on_change=model_callback,
     key="model_selected",
