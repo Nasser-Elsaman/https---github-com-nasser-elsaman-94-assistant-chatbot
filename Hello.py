@@ -75,12 +75,12 @@ def radar_chart(personality_prediction):
   for trait, pred in personality_prediction.items():
 
   # Extract just the number 
-  label= str(trait)
-  num = float(pred.rstrip('%'))
+      label= str(trait)
+      num = float(pred.rstrip('%'))
   
   # Append number to list
-  traits.append(label)
-  values.append(num)
+      traits.append(label)
+      values.append(num)
     
   N = len(labels)
   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
