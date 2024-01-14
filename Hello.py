@@ -33,14 +33,16 @@ if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
 
-on = st.sidebar.toggle('Activate Model Assessment To Start: Nasserelsaman/microsoft-finetuned-personality')
-if selected == "Project":
-    st.write ("You have to active model assessment to start")
-if on:
-    st.sidebar.write('Assessement Ready!')
+show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personality \n Activate Model for Assessment To Start')
+
 # "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
 
-    if selected == "Project":
+if selected == "Project":
+    if show_assessment = False:
+        st.write("Please activate the Model for Assessment first")
+    else: 
+        st.sidebar.write('Model Active! Ready for Assessment')
+        
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
             model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
