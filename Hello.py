@@ -18,7 +18,7 @@ client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 # Sidebar
-st.sidebar.title("<span style='color:#FF4B4B'>Configuration</span>")
+st.sidebar.title(Configuration)
 
 def model_callback():
     st.session_state["model"] = st.session_state["model_selected"]
