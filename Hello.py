@@ -38,7 +38,7 @@ show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personali
 # "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
 
 if selected == "Project":
-    if show_assessment = False:
+    if show_assessment == False:
         st.write("Please activate the Model for Assessment first")
     else: 
         st.sidebar.write('Model Active! Ready for Assessment')
