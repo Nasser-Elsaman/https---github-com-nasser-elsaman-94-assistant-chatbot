@@ -20,7 +20,7 @@ spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with
 # Sidebar
 st.sidebar.title("Configuration")
 
-on = sidebar.toggle('Activate Model Assessment: Nasserelsaman/microsoft-finetuned-personality')
+on = st.sidebar.toggle('Activate Model Assessment: Nasserelsaman/microsoft-finetuned-personality')
 if on:
     st.write('Assessement Ready!')
 # "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
