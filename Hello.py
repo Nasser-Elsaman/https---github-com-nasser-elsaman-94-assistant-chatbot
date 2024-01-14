@@ -5,7 +5,6 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import emoji
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
@@ -76,7 +75,7 @@ def radar_chart(personality_prediction):
     
     # Remove the outer box (spines)
     ax.spines['polar'].set_visible(False)
-    plt.title(emoji.emojize("Personality Traits Radar/ Spyder Chart \U+1F578"), size=16, color='black', y=1.1) # Set title color to black
+    plt.title("Personality Traits Radar/ Spyder Chart \U+1F578", size=16, color='black', y=1.1) # Set title color to black
     
     st.pyplot(fig)
 
