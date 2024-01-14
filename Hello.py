@@ -17,6 +17,14 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
+st.markdown("""
+<style>
+.css-jc4zhu {
+  color: #FF4B4B;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Sidebar
 st.sidebar.title("Configuration")
 
@@ -375,8 +383,6 @@ color: red;
 background-color: blacck;
 text-decoration: underline;
 }
-
-st.markdown("""<style> [data-testid=stSidebar] {background-color: #ff000050;}</style>""", unsafe_allow_html=True)
 
 .footer {
 position: fixed;
