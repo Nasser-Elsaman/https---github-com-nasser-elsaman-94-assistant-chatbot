@@ -77,6 +77,11 @@ def radar_chart(personality_prediction):
     ax.spines['polar'].set_visible(False)
     
     plt.title("Personality Traits Radar/ Spider Web Chart \u2745 \u270F \u2713", size=16, color='black', y=1.1) # Set title color to black
+    # Footer
+    figtext_x = 0.5
+    figtext_y = 0.05
+    figtext_text = "This Data Visualization Chart Created by Nasser Elsaman for the result of the personality assessment traits (20 questions) by the user!"
+    plt.figtext(figtext_x, figtext_y, figtext_text, fontsize=12, ha='center', va='center', color='black')
     
     st.pyplot(fig)
 
