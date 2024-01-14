@@ -8,7 +8,7 @@ torchvision
 torchaudio
 gspread
 oauth2client
-streamlit-option-menu
+streamlit_option_menu
 python-time
 streamlit-lottie
 python-dotenv
