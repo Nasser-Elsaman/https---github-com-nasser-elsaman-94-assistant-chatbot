@@ -18,8 +18,17 @@ client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 # Sidebar
-st.sidebar.title(Configuration)
+<div data-testid="stSidebar">
+  st.sidebar.title("Configuration")
+</div>
 
+  st.markdown("""
+<style>
+    [data-testid=stSidebar] {
+        background-color: #ff000050;
+    }
+</style>
+""", unsafe_allow_html=True)
 def model_callback():
     st.session_state["model"] = st.session_state["model_selected"]
 
