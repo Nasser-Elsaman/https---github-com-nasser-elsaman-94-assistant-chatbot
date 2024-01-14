@@ -17,16 +17,8 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-st.markdown("""
-<style>
-.css-jc4zhu {
-  color: #ff000050;
-}
-</style>
-""", unsafe_allow_html=True)
-
 # Sidebar
-st.sidebar.title("Configuration")
+st.sidebar.title("Configuration", style={"color": "#ff000050"})
 
 def model_callback():
     st.session_state["model"] = st.session_state["model_selected"]
