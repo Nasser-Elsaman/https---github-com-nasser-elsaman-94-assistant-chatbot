@@ -82,7 +82,7 @@ def radar_chart(personality_prediction):
       traits.append(label)
       values.append(num)
     
-  N = len(labels)
+  N = len(traits)
   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
   
   values += values[:1]
@@ -95,7 +95,7 @@ def radar_chart(personality_prediction):
   fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
   ax = plt.subplots(figsize=(6, 6), polar=True)
   # Draw one axe per variable + add labels
-  plt.xticks(angles[:-1], labels, color='grey', size=10)
+  plt.xticks(angles[:-1], traits, color='grey', size=10)
   ax.tick_params(axis='x', which='major', pad=15)
   
   # Plot data
@@ -110,7 +110,7 @@ def radar_chart(personality_prediction):
   # Fill area
   ax.fill(angles, values, "yellow" , alpha=0.2)
   ax.spines['polar'].set_visible(False)
-  plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black    
+  plt.title("Personality Traits Radar/ Spyder Chart", size=16, color='black', y=1.1) # Set title color to black
   st.pyplot(plt)
 
 # def circular_barplot(personality_prediction):
