@@ -410,7 +410,7 @@ st.markdown("""
 <style>
 [data-testid="stsidebar"] {
   background-color: #5c0303;
-  opacity: 1;
+  opacity: 10;
 } 
 </style>
 """, unsafe_allow_html=True)
