@@ -27,6 +27,8 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
+
+if selected == "Model":
 def personality_detection(text, threshold=0.05, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
@@ -49,7 +51,23 @@ def personality_detection(text, threshold=0.05, endpoint= 1.0):
     result = {label_names[i]: f"{predictions[i]*100:.0f}%" for i in range(len(label_names))}
 
     return result
+# Sidebar
+st.sidebar.title("Configuration")
 
+
+def model_callback():
+    st.session_state["model"] = st.session_state["model_selected"]
+
+if "model" not in st.session_state:
+    st.session_state["model"] = "Nasserelsaman/microsoft-finetuned-personality"
+
+st.session_state.model = st.sidebar.radio(
+    "Select a model",
+    ("Nasserelsaman/microsoft-finetuned-personality"),
+    index=0 if st.session_state["model"] == "Nasserelsaman/microsoft-finetuned-personality" else 1,
+    on_change=model_callback,
+    key="model_selected",
+)
 def radar_chart(personality_prediction):
     # Create empty list 
     labels = []
@@ -377,6 +395,9 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+if selected == "About":
+    st.header(":mailbox: Get In Touch With Me!")
 
 # # To hide "fork my app on github" icon
 # hide_github_icon = """
