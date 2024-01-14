@@ -20,7 +20,7 @@ spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with
 st.markdown("""
 <style>
 .css-jc4zhu {
-  color: #FF4B4B;
+  color: #ff000050;
 }
 </style>
 """, unsafe_allow_html=True)
