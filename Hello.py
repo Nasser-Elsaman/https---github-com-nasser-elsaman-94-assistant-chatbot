@@ -399,9 +399,14 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Sidebar
-<div data-testid="stSidebar">
-  st.sidebar.title("Configuration")
-</div>
+st.sidebar.title("Configuration")
+st.markdown("""
+<style>
+[data-testid="stsidebar"] {
+  background-color: red;
+} 
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <style> [data-testid=stSidebar] {background-color: #ff000050;}
