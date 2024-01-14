@@ -75,9 +75,7 @@ def radar_chart(personality_prediction):
     
     # Remove the outer box (spines)
     ax.spines['polar'].set_visible(False)
-    title = "Personality Traits Radar/ Spyder Chart \u1F578"
-    plt.title(title, size=16, color='black', y=1.1)
-    # plt.title("Personality Traits Radar/ Spyder Chart \u 1F577", size=16, color='black', y=1.1) # Set title color to black
+    plt.title("Personality Traits Radar/ Spyder Chart \U0001F578", size=16, color='black', y=1.1) # Set title color to black
     
     st.pyplot(fig)
 
