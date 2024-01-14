@@ -18,23 +18,23 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-selected = option_menu (    
-    menu_title=None,    
-    options= ["Home", "Project", "About"],    
-    icons= ["house", "book", "file-person"],    
-    menu_icon = "cast",    
-    default_index=0,    
-    orientation = "horizontal",    
-    styles= {"container": {"padding": "0!important", "background-color": "#5c0303"},         
-             "icon": {"color": "orange", "font-size": "15px"},         
-             "nav-link": {"font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#aba9a9"},        
+selected = option_menu (
+    menu_title=None,
+    options= ["Home", "Project", "About"],
+    icons= ["house", "book", "file-person"],
+    menu_icon = "cast",
+    default_index=0,
+    orientation = "horizontal",
+    styles= {"container": {"padding": "0!important", "background-color": "#5c0303"},
+             "icon": {"color": "orange", "font-size": "15px"},
+             "nav-link": {"font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#aba9a9"},
              "nav-link-selected": {"background-color": "#121212"}})
-if selected == "Home":    
-    st.title ("Welecome to LLMs-Based Personality Assessment.")    
+if selected == "Home":
+    st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
 def personality_detection(text, threshold=0.05, endpoint= 1.0):
-    tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
-    model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
+    tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
+    model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
     
     inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
     outputs = model(**inputs)
