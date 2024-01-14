@@ -12,7 +12,6 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 # load_dotenv()
 # os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
-
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
 client = gspread.authorize(creds)
@@ -20,7 +19,6 @@ spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with
 
 # Sidebar
 st.sidebar.title("Configuration")
-
 
 def model_callback():
     st.session_state["model"] = st.session_state["model_selected"]
@@ -377,6 +375,14 @@ color: red;
 background-color: blacck;
 text-decoration: underline;
 }
+
+st.markdown("""
+<style>
+    [data-testid=stSidebar] {
+        background-color: #ff000050;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 .footer {
 position: fixed;
