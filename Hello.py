@@ -34,84 +34,96 @@ def personality_detection(text, threshold=0.05, endpoint= 1.0):
 
     return result
 
-# def radar_chart(personality_prediction):
-#     labels = list(personality_prediction.keys())
-#     values = list(personality_prediction.values())
-    
-#     num_vars = len(labels)
-#     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
-
-#     # Include the first element of the list to close the circular graph
-#     values += [values[0]]
-#     angles += [angles[0]]
-    
-#     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
-    
-#     # Set background color to white
-#     ax.plot(angles, values, color='blue', linewidth=5, linestyle='solid')
-#     ax.fill(angles, values, color='blue', alpha=0.9)
-    
-#     # Add radial gridlines
-#     ax.set_yticklabels([])
-#     ax.set_xticks(angles[:-1])
-#     ax.set_xticklabels(labels, color='black') # Set labels color to black
-    
-#     # Add range numbers on the radar chart
-#     range_numbers = np.linspace(0, 0.1, 5)
-#     ax.set_yticks(range_numbers)
-#     ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
-    
-#     # Remove the outer box (spines)
-#     ax.spines['polar'].set_visible(False)
-#     plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
-    
-#     st.pyplot(fig)
-
 def radar_chart(personality_prediction):
-  # Create empty list 
-  traits = []
-  values = []
-  # Iterate through dict items
-  for trait, pred in personality_prediction.items():
+    # Create empty list 
+    labels = []
+    values = []
+    # Iterate through dict items
+    for trait, pred in personality_prediction.items():
 
-  # Extract just the number 
+    # Extract just the number 
       label= str(trait)
       num = float(pred.rstrip('%'))
   
-  # Append number to list
-      traits.append(label)
+    # Append number to list
+      labels.append(label)
       values.append(num)
+
     
-  N = len(traits)
-  angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
-  
-  values += values[:1]
+    num_vars = len(labels)
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
 
-  # Determining the angle of each spoke
-  angles = [n / float(N) * 2 * np.pi for n in range(N)]
-  angles += angles[:1]
-
-  # Initialize the polar plot
-  fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
-  
-  # Draw one axe per variable + add labels
-  plt.xticks(angles[:-1], traits, color='grey', size=10)
-  ax.tick_params(axis='x', which='major', pad=15)
-  
-  # Plot data
+    # Include the first element of the list to close the circular graph
+    values += [values[0]]
+    angles += [angles[0]]
     
-  ax.plot(angles, values, linewidth=1, linestyle='solid',color="green")
-  ax.fill(angles, values, color='blue', alpha=0.3)
-  # # Add range numbers on the radar chart
-  range_numbers = np.linspace(0, 1, 5)
-  ax.set_yticks(range_numbers)
-  # ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
+    
+    # Set background color to white
+    ax.plot(angles, values, color='blue', linewidth=5, linestyle='solid')
+    ax.fill(angles, values, color='blue', alpha=0.9)
+    
+    # Add radial gridlines
+    ax.set_yticklabels([])
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels, color='black') # Set labels color to black
+    
+    # Add range numbers on the radar chart
+    range_numbers = np.linspace(0, 0.1, 5)
+    ax.set_yticks(range_numbers)
+    ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
+    
+    # Remove the outer box (spines)
+    ax.spines['polar'].set_visible(False)
+    plt.title("Personality Traits Radar Chart", size=16, color='black', y=1.1) # Set title color to black
+    
+    st.pyplot(fig)
 
-  # Fill area
-  ax.fill(angles, values, "yellow" , alpha=0.2)
-  ax.spines['polar'].set_visible(False)
-  plt.title("Personality Traits Radar/ Spyder Chart", size=16, color='black', y=1.1) # Set title color to black
-  st.pyplot(fig)
+# def radar_chart(personality_prediction):
+#   # Create empty list 
+#   traits = []
+#   values = []
+#   # Iterate through dict items
+#   for trait, pred in personality_prediction.items():
+
+#   # Extract just the number 
+#       label= str(trait)
+#       num = float(pred.rstrip('%'))
+  
+#   # Append number to list
+#       traits.append(label)
+#       values.append(num)
+    
+#   N = len(traits)
+#   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+  
+#   values += values[:1]
+
+#   # Determining the angle of each spoke
+#   angles = [n / float(N) * 2 * np.pi for n in range(N)]
+#   angles += angles[:1]
+
+#   # Initialize the polar plot
+#   fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
+  
+#   # Draw one axe per variable + add labels
+#   plt.xticks(angles[:-1], traits, color='grey', size=10)
+#   ax.tick_params(axis='x', which='major', pad=15)
+  
+#   # Plot data
+    
+#   ax.plot(angles, values, linewidth=1, linestyle='solid',color="green")
+#   ax.fill(angles, values, color='blue', alpha=0.3)
+#   # # Add range numbers on the radar chart
+#   range_numbers = np.linspace(0, 1, 5)
+#   ax.set_yticks(range_numbers)
+#   # ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
+
+#   # Fill area
+#   ax.fill(angles, values, "yellow" , alpha=0.2)
+#   ax.spines['polar'].set_visible(False)
+#   plt.title("Personality Traits Radar/ Spyder Chart", size=16, color='black', y=1.1) # Set title color to black
+#   st.pyplot(fig)
 
 # def circular_barplot(personality_prediction):
 
