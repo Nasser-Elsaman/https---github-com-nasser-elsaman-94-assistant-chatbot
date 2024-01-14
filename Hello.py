@@ -20,15 +20,10 @@ spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with
 # Sidebar
 st.sidebar.title("Configuration")
 
-def model_callback():
-    st.session_state.model = "Nasserelsaman/microsoft-finetuned-personality"
-
-st.session_state.model = st.sidebar.radio(
-     "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased",
-     ("Nasserelsaman/microsoft-finetuned-personality"),
-     index=0,
-     on_change=model_callback,
-     key="model_selected")
+on = st.toggle('Activate Model Assessment: Nasserelsaman/microsoft-finetuned-personality')
+if on:
+    st.write('Assessement Ready!')
+# "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
 
 selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], icons= ["house", "book", "file-person"],
     menu_icon = "cast", default_index=0, orientation = "horizontal",
