@@ -409,8 +409,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown("""
 <style>
 [data-testid="stsidebar"] {
-  background-color: #5c0303;
-  background-color: rgba (76, 175, 80, 1)
+ # background-color: #5c0303;
+  background-color: rgba(76, 175, 80, 1);
   opacity: 1;
 } 
 </style>
