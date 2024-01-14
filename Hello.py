@@ -5,12 +5,33 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from streamlit_option_menu import option_menu
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
+selected = option_menu (    
+    menu_title=None,    
+    options= ["Home", "Project", "About"],    
+    icons= ["house", "book", "file-person"],    
+    menu_icon = "cast",    
+    default_index=0,    
+    orientation = "horizontal",    
+    styles= {"container": {"padding": "0!important", "background-color": "#5c0303"},         
+             "icon": {"color": "orange", "font-size": "15px"},         
+             "nav-link": {"font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#aba9a9"},        
+             "nav-link-selected": {"background-color": "#121212"}})
+if selected == "Home":    
+    st.title ("Welecome to LLMs-Based Personality Assessment.")    
+    st.text ("This personality is Based on Mini IPIP personality assessment")
 def personality_detection(text, threshold=0.05, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
