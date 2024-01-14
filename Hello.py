@@ -376,13 +376,7 @@ background-color: blacck;
 text-decoration: underline;
 }
 
-st.markdown("""
-<style>
-    [data-testid=stSidebar] {
-        background-color: #ff000050;
-    }
-</style>
-""", unsafe_allow_html=True)
+st.markdown("""<style> [data-testid=stSidebar] {background-color: #ff000050;}</style>""", unsafe_allow_html=True)
 
 .footer {
 position: fixed;
