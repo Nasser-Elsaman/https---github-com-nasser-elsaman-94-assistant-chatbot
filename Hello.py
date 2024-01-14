@@ -21,15 +21,14 @@ spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with
 st.sidebar.title("Configuration")
 
 def model_callback():
-    st.session_state["model"] = st.session_state["model_selected"]
-
-if "model" not in st.session_state:
-    st.session_state["model"] = "Nasserelsaman/microsoft-finetuned-personality"
+    st.session_state.model = "Nasserelsaman/microsoft-finetuned-personality"
 
 st.session_state.model = st.sidebar.radio(
-    "Select a model",
-    ("Nasserelsaman/microsoft-finetuned-personality")
-)
+     "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased",
+     ("Nasserelsaman/microsoft-finetuned-personality"),
+     index=0,
+     on_change=model_callback,
+     key="model_selected")
 
 selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], icons= ["house", "book", "file-person"],
     menu_icon = "cast", default_index=0, orientation = "horizontal",
