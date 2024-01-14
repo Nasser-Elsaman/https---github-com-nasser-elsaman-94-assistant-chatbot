@@ -11,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-067316
 client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
-def personality_detection(text, threshold=0.01, endpoint= 1.0):
+def personality_detection(text, threshold=0.05, endpoint= 1.0):
     tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", token="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")
     
@@ -26,7 +26,7 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
     probabilities = torch.sigmoid(logits)
 
     # Set values less than the threshold to zero
-    predictions[predictions < threshold] = 0.01
+    predictions[predictions < threshold] = 0.05
     predictions[predictions > endpoint] = 1.0
 
     label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
@@ -68,8 +68,20 @@ def personality_detection(text, threshold=0.01, endpoint= 1.0):
 #     st.pyplot(fig)
 
 def radar_chart(personality_prediction):
-  labels = list(personality_prediction.keys())
-  values = list(personality_prediction.values())
+  # Create empty list 
+  traits = []
+  values = []
+  # Iterate through dict items
+  for trait, pred in personality_prediction.items():
+
+  # Extract just the number 
+  label= str(trait)
+  num = float(pred.rstrip('%'))
+  
+  # Append number to list
+  traits.append(label)
+  values.append(num)
+    
   N = len(labels)
   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
   
@@ -281,7 +293,7 @@ def questionnaire():
             st.write(merged_responses)
 
             # Perform personality detection
-            personality_prediction = personality_detection(merged_responses, threshold=0.01, endpoint= 1.0)
+            personality_prediction = personality_detection(merged_responses, threshold=0.05, endpoint= 1.0)
             
             # Display personality predictions
             st.write("Personality Predictions:")
