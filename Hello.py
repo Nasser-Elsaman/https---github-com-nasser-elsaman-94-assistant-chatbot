@@ -405,7 +405,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown("""
 <style>
 [data-testid="stsidebar"] {
-  background-color: red;
+  background-color: #5c0303;
 } 
 </style>
 """, unsafe_allow_html=True)
