@@ -6,11 +6,11 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import os
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
 
-load_dotenv()
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+# load_dotenv()
+# os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
