@@ -33,7 +33,9 @@ if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
 
-on = st.sidebar.toggle('Activate Model Assessment: Nasserelsaman/microsoft-finetuned-personality')
+on = st.sidebar.toggle('Activate Model Assessment To Start: Nasserelsaman/microsoft-finetuned-personality')
+if selected == "Project":
+    st.write ("You have to active model assessment to start")
 if on:
     st.sidebar.write('Assessement Ready!')
 # "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
