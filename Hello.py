@@ -6,12 +6,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import os
-from dotenv import load_dotenv
 import time
-
-load_dotenv()
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
@@ -48,8 +43,8 @@ if selected == "Project":
         st.sidebar.write('Model Activated successfuly! Assessement Ready Now!')
         
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
-            tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
-            model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
+            tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token="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")
+            model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token="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")
             
             inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
             outputs = model(**inputs)
