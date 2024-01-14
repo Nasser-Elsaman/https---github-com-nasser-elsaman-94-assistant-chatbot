@@ -39,13 +39,13 @@ show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personali
 
 if selected == "Project":
     if show_assessment == False:
-        st.write("Please activate the Model for Assessment first")
+        st.write("Please activate the Model in the sidebar for Assessment first")
     else:
         with st.spinner('Loading...'):
             time.sleep(3)
         with st.spinner('In progress...'):
             time.sleep(2)
-        st.sidebar.write('Model Actived successfuly! Assessement Ready Now!')
+        st.sidebar.write('Model Activated successfuly! Assessement Ready Now!')
         
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
