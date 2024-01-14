@@ -47,7 +47,7 @@ if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
 
-if selected == "Model":
+if selected == "Project":
     def personality_detection(text, threshold=0.05, endpoint= 1.0):
         tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
         model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality", use_auth_token=True)
