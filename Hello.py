@@ -230,15 +230,15 @@ if selected == "Project":
 if selected == "About":
     st.header(":mailbox: Get In Touch With Me!")
     st.write(":calling: Phone:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
-    st.write(":email: Email:- nasser.elsaman1994@gmail.com, nasser.mohamed2012@feps.edu.eg.)
+    st.write(":email: Email:- nasser.elsaman1994@gmail.com, nasser.mohamed2012@feps.edu.eg.")
     st.write (":house_with_garden: Addresses:- :one: El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. :two: El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
     st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com/.)
     st.write("Kindly note that this project of the third one from total 3 projects for researching purposes only and If you need to check the other 2 projects.")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
-    ](%s)" % url)
+    
     st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [Google_Form_link]. (%s)" %Google_Form_link)
     ML_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" % ML_link)
+    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" %ML_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
