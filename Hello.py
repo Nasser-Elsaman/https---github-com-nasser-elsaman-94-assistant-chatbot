@@ -14,7 +14,7 @@ client = gspread.authorize(creds)
 spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 # Sidebar
-st.sidebar.title("Configuration")
+st.sidebar.title(":hammer_and_wrench: Configuration")
 
 selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], icons= ["house", "book", "file-person"],
     menu_icon = "cast", default_index=0, orientation = "horizontal",
@@ -38,7 +38,7 @@ if selected == "Home":
     
     st.write (":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
 
-st.sidebar.write (":mortar_board: Activate Model To Start :mortar_board:")
+st.sidebar.write (":mortar_board: Activate Model To Start")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.] (%s)" % model_link)
