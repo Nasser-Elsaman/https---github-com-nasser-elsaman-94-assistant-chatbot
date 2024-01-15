@@ -25,7 +25,6 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
              "nav-link": {"font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#aba9a9"},
              "nav-link-selected": {"background-color": "#121212"}})
 
-
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment :brain: :bar_chart:")
     url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
@@ -43,7 +42,7 @@ if selected == "Home":
 st.sidebar.write (":mortar_board: Activate Model To Start")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
-st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
+st.sidebar.write (":100: To Fine-tune my model; I depended on the pretrained Model (Base Model):- [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
 if selected == "Project":
     if show_assessment == False:
         st.write(":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
