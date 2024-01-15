@@ -232,7 +232,7 @@ if selected == "About":
     st.write(":calling: Phone:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
     mail1 = "nasser.elsaman1994@gmail.com"
     mail2 = "nasser.mohamed2012@feps.edu.eg"
-    st.write(":email: Email:- [nasser.elsaman1994@gmail.com] [nasser.mohamed2012@feps.edu.eg].  (%s)" % mail11 mail2)
+    st.write(":email: Email:- [nasser.elsaman1994@gmail.com], [nasser.mohamed2012@feps.edu.eg]. (%s)" % mail1, mail2)
     site = "https://elsamaninfo.wordpress.com/"
     st.write (":house_with_garden: Addresses:- :one: El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. :two: El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
     st.write(":globe_with_meridians: Website:- [https://elsamaninfo.wordpress.com/]. (%s)" % site)
