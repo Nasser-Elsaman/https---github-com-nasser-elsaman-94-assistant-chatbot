@@ -41,7 +41,7 @@ if selected == "Home":
 st.sidebar.write (":mortar_board: Activate Model To Start")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
-st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.] (%s)" % model_link)
+st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
 if selected == "Project":
     if show_assessment == False:
         st.write(":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
@@ -53,7 +53,7 @@ if selected == "Project":
         st.sidebar.write(':ok: Model Activated successfuly! Assessement Ready Now!')
         st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of who you are in comparison to other persons you know who are around your age and of the same sex as you. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         quest_link = "https://rockford.instructure.com/courses/8365/files/419203/download?verifier=dCgoMhAAmj7FnEqVb4mKBEHZ1ia3Uh4YCSBtwwLX&wrap=1"
-        st.sidebar.write (":books: _To check the originate questions and how to calculate your score, check this PDF file [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...).]_ (%s)" % quest_link)
+        st.sidebar.write (":books: _To check the originate questions and how to calculate your score, check this PDF file [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...)._](%s)" %quest_link)
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             token="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"
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token)
@@ -230,18 +230,15 @@ if selected == "Project":
 if selected == "About":
     st.header(":mailbox: Get In Touch With Me!")
     st.write(":calling: Phone:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
-    mail1 = "nasser.elsaman1994@gmail.com"
-    mail2 = "nasser.mohamed2012@feps.edu.eg"
-    st.write(":email: Email:- [nasser.elsaman1994@gmail.com], [nasser.mohamed2012@feps.edu.eg]. (%s)" % mail1, mail2)
-    site = "https://elsamaninfo.wordpress.com/"
+    st.write(":email: Email:- nasser.elsaman1994@gmail.com, nasser.mohamed2012@feps.edu.eg.)
     st.write (":house_with_garden: Addresses:- :one: El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. :two: El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
-    st.write(":globe_with_meridians: Website:- [https://elsamaninfo.wordpress.com/]. (%s)" % site)
+    st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com/.)
     st.write("Kindly note that this project of the third one from total 3 projects for researching purposes only and If you need to check the other 2 projects.")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
-    
-    st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [Google_Form_Link]. (%s)" % Google_Form_link)
+    ](%s)" % url)
+    st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [Google_Form_link]. (%s)" %Google_Form_link)
     ML_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write("ML-based Personality Assessment Using Flask, python and its' libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model pn pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" % ML_link)
+    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" % ML_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
@@ -291,15 +288,3 @@ st.markdown("""
 } 
 </style>
 """, unsafe_allow_html=True)
-
-st.markdown("""
-<style> [data-testid=stSidebar] {background-color: #ff000050;}
-</style>
-""", unsafe_allow_html=True)
-
-# To hide "fork my app on github" icon
-hide_github_icon = """
-
-.css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137, .viewerBadge_text__1JaDK{ display: none; } #MainMenu{ visibility: hidden; } footer { visibility: hidden; } header { visibility: hidden; }
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
