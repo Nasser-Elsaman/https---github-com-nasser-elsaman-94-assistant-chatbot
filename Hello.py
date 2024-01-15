@@ -240,9 +240,9 @@ if selected == "About":
     st.write(":bookmark_tabs: Kindly note that this project is storing assessment data results for research purposes only and it is the third out of 3 projects. If you need to check the other 2 projects:-")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
-    st.write(":one: Rule-based Personality Assessment using Google Form and Google Script (IF-Then Rule) and the data stored in a Google Sheet for research purposes only [(link).](%s)" % Google_Form_link)
+    st.write(":one: Rule-based Personality Assessment using Google Form and Google Script (IF-Then Rule) with the data stored in a Google Sheet for research purposes only [(link).](%s)" % Google_Form_link)
     ml_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write(":two: ML-based Personality Assessment using Flask, python, and its libraries to create a model, uploaded on pythonanywhere and The data stored in a Google Sheet for research purposes only [(link).](%s)" % ml_link)
+    st.write(":two: ML-based Personality Assessment using Flask, python, and its libraries to create a model, uploaded on pythonanywhere with The data stored in a Google Sheet for research purposes only [(link).](%s)" % ml_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
