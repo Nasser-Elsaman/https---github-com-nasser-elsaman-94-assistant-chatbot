@@ -57,8 +57,8 @@ if selected == "Project":
         st.sidebar.write (":books: _To check the original questions and calculate your score, check out this PDF file:- [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...)._](%s)" %quest_link)
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             token="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"
-            tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token)
-            model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token)
+            tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token=token)
+            model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token=token)
             
             inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
             outputs = model(**inputs)
@@ -196,7 +196,7 @@ if selected == "Project":
                 st.error("Please answer all 20 questions before submitting.")
             else:
             # Display the button with the disabled state from session state
-                submit_button = st.button("Submit", key="Submit") #, disabled=st.session_state.disabled)
+                submit_button = st.button("Submit", key="Submit", disabled=st.session_state.disabled)
                 # Check if the button is clicked
                 if submit_button:
                     # Update session state to disable the button
