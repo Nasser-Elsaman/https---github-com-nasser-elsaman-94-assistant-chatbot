@@ -52,9 +52,9 @@ if selected == "Project":
         with st.spinner('In progress...'):
             time.sleep(2)
         st.sidebar.write(':balloon: Model Activated successfuly! Assessement Ready Now!')
-        st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of who you are in comparison to other persons you know who are around your age and of the same sex as you. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
+        st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of yourself in comparison to other persons around your age and of the same sex. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         quest_link = "https://rockford.instructure.com/courses/8365/files/419203/download?verifier=dCgoMhAAmj7FnEqVb4mKBEHZ1ia3Uh4YCSBtwwLX&wrap=1"
-        st.sidebar.write (":books: _To check the originate questions and how to calculate your score, check this PDF file [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...)._](%s)" %quest_link)
+        st.sidebar.write (":books: _To check the original questions and calculate your score, check out this PDF file [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...)._](%s)" %quest_link)
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             token="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"
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token)
