@@ -232,7 +232,7 @@ if selected == "About":
     st.write(":calling: Phone:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
     st.write(":email: Email:- nasser.elsaman1994@gmail.com, nasser.mohamed2012@feps.edu.eg.")
     st.write (":house_with_garden: Addresses:- :one: El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. :two: El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
-    st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com/.")
+    st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com.")
     st.write("Kindly note that this project of the third one from total 3 projects for researching purposes only and If you need to check the other 2 projects.")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
@@ -281,7 +281,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.markdown("""
 <style>
-[data-testid="stsidebar"] {
+[data-testid="stSidebar"] {
  background-color: #5c0303;
  opacity: 1;
 } 
