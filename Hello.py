@@ -27,6 +27,9 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
+    url = "https://www.streamlit.io"
+    st.write("check out this [link](%s)" % url)
+    st.markdown("check out this [link](%s)" % url)
 
 show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personality \n Activate Model for Assessment To Start')
 
