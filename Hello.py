@@ -25,7 +25,7 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 
 
 if selected == "Home":
-    st.title ("Welecome to LLMs-Based Personality Assessment. :brain: :performing_arts: :bar_chart:")
+    st.title ("Welecome to LLMs-Based Personality Assessment :brain: :bar_chart:")
     url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
     st.text(":white_check_mark: This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??")
     st.text(":white_check_mark: The following are some main arguments for why the Mini-IPIP personality test could be a wise option:")
