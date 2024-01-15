@@ -36,7 +36,7 @@ if selected == "Home":
     st.write (":white_check_mark: To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length.")
     st.write (":white_check_mark: For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality.](%s)" % url)
     
-    st.write (":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
+    st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
 
 st.sidebar.write (":mortar_board: Activate Model To Start")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
@@ -44,7 +44,7 @@ model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
 if selected == "Project":
     if show_assessment == False:
-        st.write(":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
+        st.write(":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
     else:
         with st.spinner('Loading...'):
             time.sleep(3)
@@ -239,7 +239,7 @@ if selected == "About":
     
     st.write(":one: Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [link.](%s)" % Google_Form_link)
     ML_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write(":two: ML-based Personality Assessment Using Flask python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere and The data stored in a Google Sheet for researching purposes only [link.](%s)" % ML_link)
+    st.write(":two: ML-based Personality Assessment Using Flask python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere and The data stored in a Google Sheet for researching purposes only [link.](%s)" %ML_link)
 
 # Footer Format
 footer="""<style>
