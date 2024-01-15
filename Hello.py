@@ -37,7 +37,7 @@ if selected == "Home":
     st.write (":white_check_mark: To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length.")
     st.write (":white_check_mark: For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality.](%s)" % url)
     
-    st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
+    st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper Left Arrow)_ :arrow_forward:")          
 
 st.sidebar.write (":ok: Activate Model To Start:- ")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
@@ -47,7 +47,7 @@ my_model = "https://huggingface.co/Nasserelsaman/microsoft-finetuned-personality
 st.sidebar.write(":male-technologist: Check out My Fine-tuned model:- [Nasserelsaman/microsoft-finetuned-personality.](%s)" %my_model)
 if selected == "Project":
     if show_assessment == False:
-        st.write(":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
+        st.write(":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper Left Arrow)_ :arrow_forward:")
     else:
         with st.spinner('Loading...'):
             time.sleep(3)
@@ -56,7 +56,7 @@ if selected == "Project":
         st.sidebar.write(':balloon: Model Activated successfuly! Assessement Ready Now!')
         st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of yourself in comparison to other persons around your age and of the same sex. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         quest_link = "https://rockford.instructure.com/courses/8365/files/419203/download?verifier=dCgoMhAAmj7FnEqVb4mKBEHZ1ia3Uh4YCSBtwwLX&wrap=1"
-        st.sidebar.write (":books: _Kindly note that this project is storing assessment data results for research purposes only, and to check the original questions and calculate your score, check out this PDF file:-_ [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...).](%s)" %quest_link)
+        st.sidebar.write (":books: _Kindly note that this project is storing assessment data results for research purposes only, and to ensure from the original questions and learn how to calculate your score, check out this PDF file:-_ [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...).](%s)" %quest_link)
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             token="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"
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token=token)
