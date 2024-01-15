@@ -26,11 +26,14 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
-    st.text ("This personality is Based on Mini IPIP personality assessment")
     url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
-    st.write("check out this article link: [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
+    st.write("This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??\nThe following are some main arguments for why the Mini-IPIP personality test could be a wise option: It is quicker to complete because it is a 20-item scale rather than the lengthy Big Five inventory. The user experience may be enhanced by this. In testing, the Mini-IPIP has shown strong psychometric qualities, including factorial validity, convergent validity with larger measures, and reliability. Therefore, despite its briefness, it properly assesses the Big Five variables.
+- Its short duration makes it appropriate for use in research projects, screening, surveys, and other scenarios when evaluation time is restricted.
+- It is available since it is free to use for non-commercial research purposes. 
+- Wider utilisation is made possible by the availability of translations into other languages.
+- It is a well-respected short scale, having been utilised and mentioned in hundreds of published investigations. [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
     st.markdown("check out this [link](%s)" % url)
-
+    st.text ("")
 show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personality \n Activate Model for Assessment To Start')
 
 # "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
