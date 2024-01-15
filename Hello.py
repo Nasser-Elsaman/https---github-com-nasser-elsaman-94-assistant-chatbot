@@ -27,16 +27,16 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment. :brain: :performing_arts: :bar_chart:")
     url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
-    st.text("- This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??")
-    st.text("* The following are some main arguments for why the Mini-IPIP personality test could be a wise option:")
-    st.text("1) It is a short 20-item scale compared to longer Big Five inventories, making it faster to complete. This can improve user experience.")
-    st.text ("2) In testing, the Mini-IPIP has shown strong psychometric qualities, including factorial validity, convergent validity with larger measures, and reliability. Therefore, despite its briefness, it properly assesses the Big Five variables.
-    st.text ("3) The brief length makes it suitable for situations where assessment time is limited, like surveys, research studies, or screening.
-    st.text ("4) It is a well-respected short scale, having been utilised and mentioned in hundreds of published investigations.
-    st.text ("- To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length.
-    st.text ("* For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
+    st.text(":white_check_mark: This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??")
+    st.text(":white_check_mark: The following are some main arguments for why the Mini-IPIP personality test could be a wise option:")
+    st.text(":one: It is a short 20-item scale compared to longer Big Five inventories, making it faster to complete. This can improve user experience.")
+    st.text (":two: In testing, the Mini-IPIP has shown strong psychometric qualities, including factorial validity, convergent validity with larger measures, and reliability. Therefore, despite its briefness, it properly assesses the Big Five variables."
+    st.text (":three: The brief length makes it suitable for situations where assessment time is limited, like surveys, research studies, or screening."
+    st.text (":four: It is a well-respected short scale, having been utilised and mentioned in hundreds of published investigations."
+    st.text (":white_check_mark: To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length."
+    st.text (":white_check_mark: For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
     st.divider()
-    st.text ("To start the assessment please activate model in the sidebar (Upper left arrow >)"
+    st.text (":sparkles: To start the assessment please activate model in the sidebar "Upper left arrow"_:arrow_forward:"
              
 
 st.sidebar.text ("Activate Model To Start'")
