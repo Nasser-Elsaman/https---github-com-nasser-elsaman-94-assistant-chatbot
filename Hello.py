@@ -120,7 +120,8 @@ if selected == "Project":
             # Remove the outer box (spines)
             ax.spines['polar'].set_visible(False)
             
-            plt.title("Personality Traits Radar/ Spider Web Chart \u2745 \u270F \u2713", size=16, color='black', y=1.1) # Set title color to black
+            plt.title("Personality Traits Radar/ Spider Web Chart :spider_web: \u2745 \u270F \u2713", size=16, color='black', y=1.1) # Set title color to black
+            
             # Footer
             figtext_x = 0.5
             figtext_y = 0.05
@@ -128,141 +129,6 @@ if selected == "Project":
             plt.figtext(figtext_x, figtext_y, figtext_text, fontsize=12, ha='center', va='center', color='black')
             
             st.pyplot(fig)
-        
-        # def radar_chart(personality_prediction):
-        #   # Create empty list 
-        #   traits = []
-        #   values = []
-        #   # Iterate through dict items
-        #   for trait, pred in personality_prediction.items():
-        
-        #   # Extract just the number 
-        #       label= str(trait)
-        #       num = float(pred.rstrip('%'))
-          
-        #   # Append number to list
-        #       traits.append(label)
-        #       values.append(num)
-            
-        #   N = len(traits)
-        #   angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
-          
-        #   values += values[:1]
-        
-        #   # Determining the angle of each spoke
-        #   angles = [n / float(N) * 2 * np.pi for n in range(N)]
-        #   angles += angles[:1]
-        
-        #   # Initialize the polar plot
-        #   fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True, facecolor='white'))
-          
-        #   # Draw one axe per variable + add labels
-        #   plt.xticks(angles[:-1], traits, color='grey', size=10)
-        #   ax.tick_params(axis='x', which='major', pad=15)
-          
-        #   # Plot data
-            
-        #   ax.plot(angles, values, linewidth=1, linestyle='solid',color="green")
-        #   ax.fill(angles, values, color='blue', alpha=0.3)
-        #   # # Add range numbers on the radar chart
-        #   range_numbers = np.linspace(0, 1, 5)
-        #   ax.set_yticks(range_numbers)
-        #   # ax.set_yticklabels([f"{num:.1%}" for num in range_numbers], color='black') # Set range numbers color to black
-        
-        #   # Fill area
-        #   ax.fill(angles, values, "yellow" , alpha=0.2)
-        #   ax.spines['polar'].set_visible(False)
-        #   plt.title("Personality Traits Radar/ Spyder Chart", size=16, color='black', y=1.1) # Set title color to black
-        #   st.pyplot(fig)
-        
-        # def circular_barplot(personality_prediction):
-        
-        #   # Get data
-        #   labels = list(personality_prediction.keys()) 
-        #   values = list(personality_prediction.values())
-        
-        #   # Calculate angles
-        #   num_vars = len(labels)
-        #   angles = np.linspace(0.05, 2*np.pi- 0.05, num_vars, endpoint=False)
-        #   # Figure 
-        #   fig, ax = plt.subplots(figsize=(8,8), subplot_kw={'polar': True})
-        #   fig.set_facecolor('black')
-        #   ax.set_facecolor('white')
-            
-        #   # Bars
-        #   bars = ax.bar(angles, values, width=0.5, color='#645F8C')
-            
-        #   # Bar labels
-        #   for bar, angle, label in zip(bars, angles, labels):
-        #     rotation = np.rad2deg(angle)
-        #     alignment = 'center' if -90 < rotation < 90 else 'right'
-        #     ax.text(angle, 1.1, label, ha=alignment, va='center', rotation=rotation, rotation_mode='anchor', color='w', fontsize=12)
-              
-        #   # Title
-        #   ax.set_title("Personality Traits", pad=25, fontsize=18, y=1.12, color='#4B3F6B')
-            
-        #   # Background
-        #   ax.patch.set_alpha(0)
-        #   ax.set_theta_offset(np.pi / 2)
-        #   ax.set_theta_direction(-1)
-            
-        #   # Remove axes
-        #   # Remove ticks and labels
-        #   ax.set_xticks(angles)
-        #   # ax.set_xticklabels(labels, size=13)
-        #   ax.xaxis.grid(False)
-            
-        #   ax.set_yticklabels([])
-        #   ax.set_yticks([0, 25, 50, 75, 100])
-        
-            
-        #   # Show plot
-        #   st.pyplot(fig)
-        
-          # # Create figure
-          # fig, ax = plt.subplots(figsize=(9,12), subplot_kw={"projection": "polar"})
-          # fig.patch.set_facecolor("white")
-          # ax.set_facecolor("white")
-          # ax.set_theta_offset (1.2 * np.pi/2)
-          # ax.set_ylim (-1500, 3500)
-        
-          # ax.bar (angles, values, alpha=0.9, width= 0.52, zorder=11)
-          # # ax.vlines (angles, 3000, color = "white", ls= (0, (4,4)), zorder=11)
-        
-        
-          # # # Draw bars
-          # # bars = ax.bar(angles, values, width=0.5, bottom=0.1)
-        
-          # # # Customize bars
-          # # for bar, angle, label in zip(bars, angles, labels):
-          # #   bar.set_facecolor('#4C72B0') 
-          # #   bar.set_alpha(0.8)
-          # #   ax.text(angle, 0.35, label, ha='center', va='center')
-        
-          # # Remove ticks and labels
-          # ax.set_xticks(angles)
-          # ax.set_xticklabels(labels, size=13)
-          # ax.xaxis.grid(False)
-            
-          # ax.set_yticklabels([])
-          # ax.set_yticks([0, 25, 50, 75, 100])
-          # ax.spines ["start"].set_color ("none")
-          # ax.spines ["polar"].set_color ("none")
-          # XTICKS = ax.xaxis.get_major_ticks()
-          # for tick in XTICKS:
-          #   tick.set_pad (10)
-          # PAD = 10
-          # ax.text (-0.2 * np.pi/2, 25 + PAD, "25", ha= "center", size = 12)
-          # ax.text (-0.2 * np.pi/2, 25 + PAD, "50", ha= "center", size = 12)
-          # ax.text (-0.2 * np.pi/2, 25 + PAD, "75", ha= "center", size = 12)
-          # ax.text (-0.2 * np.pi/2, 25 + PAD, "100", ha= "center", size = 12)
-          # # Set title
-          # ax.set_title("Personality Traits", size=18, y=1.08)
-          # st.pyplot(fig) 
-        
-          # # Show plot
-          # plt.show()
-         
         
         def questionnaire():
             st.title("Personality Assessment")
@@ -293,21 +159,6 @@ if selected == "Project":
                 "I seldom feel blue.",
                 "I do not have a good imagination."
             ]
-        
-            # Collect answers
-            # answers = []
-            # for i, question in enumerate(questions, start=1):
-            #     st.markdown("--------------------------------------------------------------")
-            #     st.write(f"**{i}**. {question}")
-                
-            #     answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", index=None, horizontal=True)
-            #     answers.append(answer)
-        
-            #     Merge questions and answers in one sentence
-            # merged_responses = " ".join([f"{a} with that {q}" for q, a in zip(questions, answers)])
-        
-            # reverse_questions = [5, 8, 10, 11, 12, 18, 19]
-            # answers = []
         
             reverse_questions = [6, 7, 8, 9, 10, 15, 16, 17, 18, 19, 20]
             answers = []
@@ -378,7 +229,19 @@ if selected == "Project":
         
 if selected == "About":
     st.header(":mailbox: Get In Touch With Me!")
+    st.write(":calling: Phone:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
+    mail1 = "nasser.elsaman1994@gmail.com"
+    mail2 = "nasser.mohamed2012@feps.edu.eg"
+    st.write(":email: Email:- [nasser.elsaman1994@gmail.com] [nasser.mohamed2012@feps.edu.eg].  (%s)" % mail11 mail2)
+    site = "https://elsamaninfo.wordpress.com/"
+    st.write (":house_with_garden: Addresses:- :one: El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. :two: El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
+    st.write(":globe_with_meridians: Website:- [https://elsamaninfo.wordpress.com/]. (%s)" % site)
+    st.write("Kindly note that this project of the third one from total 3 projects for researching purposes only and If you need to check the other 2 projects.")
+    Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
+    st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [Google_Form_Link]. (%s)" % Google_Form_link)
+    ML_link = "https://nasserelsaman.pythonanywhere.com/model-based"
+    st.write("ML-based Personality Assessment Using Flask, python and its' libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model pn pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" % ML_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
@@ -389,7 +252,7 @@ text-decoration: underline;
 
 a:hover,  a:active {
 color: red;
-background-color: blacck;
+background-color: black;
 text-decoration: underline;
 }
 
@@ -434,9 +297,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# # To hide "fork my app on github" icon
-# hide_github_icon = """
+# To hide "fork my app on github" icon
+hide_github_icon = """
 
-# .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137, .viewerBadge_text__1JaDK{ display: none; } #MainMenu{ visibility: hidden; } footer { visibility: hidden; } header { visibility: hidden; }
-# """
-# st.markdown(hide_github_icon, unsafe_allow_html=True)
+.css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137, .viewerBadge_text__1JaDK{ display: none; } #MainMenu{ visibility: hidden; } footer { visibility: hidden; } header { visibility: hidden; }
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
