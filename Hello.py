@@ -38,7 +38,7 @@ if selected == "Home":
     
     st.write (":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
 
-st.sidebar.text (":mortar_board: Activate Model To Start :mortar_board:")
+st.sidebar.write (":mortar_board: Activate Model To Start :mortar_board:")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.] (%s)" % model_link)
