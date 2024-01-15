@@ -237,12 +237,12 @@ if selected == "About":
     st.write (":house_with_garden: Addresses:- El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. / El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
     st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com.")
     st.divider()
-    st.write(":bookmark_tabs: Kindly note that this project is storing assessment data results for research purposes only and it is the third out of total 3 projects. If you need to check the other 2 projects:-")
+    st.write(":bookmark_tabs: Kindly note that this project is storing assessment data results for research purposes only and it is the third out of 3 projects. If you need to check the other 2 projects:-")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
-    st.write(":one: Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [link.](%s)" % Google_Form_link)
+    st.write(":one: Rule-based Personality Assessment using Google Form and Google Script (IF-Then Rule) and the data stored in a Google Sheet for research purposes only [(link).](%s)" % Google_Form_link)
     ml_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write(":two: ML-based Personality Assessment Using Flask python and its libraries to create a model then uploaded the model on and The data stored in a Google Sheet for researching purposes only [link.](%s)" % ml_link)
+    st.write(":two: ML-based Personality Assessment using Flask, python, and its libraries to create a model, uploaded on pythonanywhere and The data stored in a Google Sheet for research purposes only [(link).](%s)" % ml_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
