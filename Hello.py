@@ -51,11 +51,7 @@ if selected == "Project":
         with st.spinner('In progress...'):
             time.sleep(2)
         st.sidebar.write(':ok: Model Activated successfuly! Assessement Ready Now!')
-        st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. 
-        Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. 
-        Give a brief description of who you are today, not who you hope to become. 
-        Give a candid description of who you are in comparison to other persons you know who are around your age and of the same sex as you.
-        After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
+        st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of who you are in comparison to other persons you know who are around your age and of the same sex as you. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token="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")
