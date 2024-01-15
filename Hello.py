@@ -39,12 +39,12 @@ if selected == "Home":
     
     st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
 
-st.sidebar.write (":ok: Activate Model To Start")
+st.sidebar.write (":ok: Activate Model To Start:- ")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on the pretrained Model (Base Model):- [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
 my_model = "https://huggingface.co/Nasserelsaman/microsoft-finetuned-personality"
-st.sidebar.write(":male-technologist: My Fine-tuned mode:- [Nasserelsaman/microsoft-finetuned-personality.](%s)" %my_model)
+st.sidebar.write(":male-technologist: Check out My Fine-tuned model:- [Nasserelsaman/microsoft-finetuned-personality.](%s)" %my_model)
 if selected == "Project":
     if show_assessment == False:
         st.write(":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
