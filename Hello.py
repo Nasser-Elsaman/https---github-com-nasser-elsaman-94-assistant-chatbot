@@ -36,7 +36,7 @@ if selected == "Home":
     st.text (":white_check_mark: To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length.")
     st.text (":white_check_mark: For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality.](%s)" % url)
     st.divider()
-    st.text(":sparkles: _To start the assessment please activate model in the sidebar "Upper left arrow"_:arrow_forward:",)             
+    st.text(":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_:arrow_forward:",)             
 
 st.sidebar.text ("Activate Model To Start'")
 show_assessment = st.sidebar.toggle("Nasserelsaman/microsoft-finetuned-personality")
@@ -44,7 +44,7 @@ model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.text ("To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.] (%s)" % model_link)
 if selected == "Project":
     if show_assessment == False:
-        st.text(":sparkles: _To start the assessment please activate model in the sidebar "Upper left arrow"_:arrow_forward:",)
+        st.text(":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_:arrow_forward:",)
     else:
         with st.spinner('Loading...'):
             time.sleep(3)
