@@ -55,7 +55,7 @@ if selected == "Project":
         st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of yourself in comparison to other persons around your age and of the same sex. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         quest_link = "https://rockford.instructure.com/courses/8365/files/419203/download?verifier=dCgoMhAAmj7FnEqVb4mKBEHZ1ia3Uh4YCSBtwwLX&wrap=1"
         st.sidebar.write (":books: _To check the original questions and calculate your score, check out this PDF file:- [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...)._](%s)" %quest_link)
-        def personality_detection(text, threshold=0.05, endpoint= 1.0):
+        def personality_detection(text, threshold=0.0, endpoint= 1.0):
             token="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"
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token=token)
             model = AutoModelForSequenceClassification.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token=token)
@@ -71,7 +71,7 @@ if selected == "Project":
             probabilities = torch.sigmoid(logits)
         
             # Set values less than the threshold to zero
-            predictions[predictions < threshold] = 0.05
+            predictions[predictions < threshold] = 0.0
             predictions[predictions > endpoint] = 1.0
         
             label_names = ['Agreeableness', 'Conscientiousness', 'Extraversion', 'Neuroticism', 'Openness']
@@ -121,12 +121,12 @@ if selected == "Project":
             # Remove the outer box (spines)
             ax.spines['polar'].set_visible(False)
             
-            plt.title("Personality Traits Radar/ Spider Web Chart :spider_web: \u2745 \u270F \u2713", size=16, color='black', y=1.1) # Set title color to black
+            plt.title("Personality Traits Radar/ Spider Web Chart \u2745 \u270F \u2713", size=16, color='black', y=1.1) # Set title color to black
             
             # Footer
             figtext_x = 0.5
             figtext_y = 0.05
-            figtext_text = "This Data Visualization Chart Created by Nasser Elsaman for the result of the personality assessment traits (20 questions) by the user!"
+            figtext_text = "This Data Visualization Chart is created by Nasser Elsaman for the result of the personality assessment traits (20 questions) of the user!"
             plt.figtext(figtext_x, figtext_y, figtext_text, fontsize=12, ha='center', va='center', color='black')
             
             st.pyplot(fig)
