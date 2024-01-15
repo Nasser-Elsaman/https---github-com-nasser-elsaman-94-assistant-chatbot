@@ -27,8 +27,8 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment.")
     st.text ("This personality is Based on Mini IPIP personality assessment")
-    url = "https://www.streamlit.io"
-    st.write("check out this [link](%s)" % url)
+    url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
+    st.write("check out this article link: [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
     st.markdown("check out this [link](%s)" % url)
 
 show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personality \n Activate Model for Assessment To Start')
