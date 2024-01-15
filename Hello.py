@@ -236,9 +236,9 @@ if selected == "About":
     st.write("Kindly note that this project of the third one from total 3 projects for researching purposes only and If you need to check the other 2 projects.")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
-    st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [Google_Form_link]. (%s)" %Google_Form_link)
+    st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [Google_Form_link]. (%s)" % Google_Form_link)
     ML_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" %ML_link)
+    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only [ML-Based Personality Assessment]. (%s)" % ML_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
@@ -282,9 +282,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown("""
 <style>
 [data-testid="stsidebar"] {
- # background-color: #5c0303;
-  background-color: rgba(76, 175, 80, 1);
-  opacity: 1;
+ background-color: #5c0303;
+ opacity: 1;
 } 
 </style>
 """, unsafe_allow_html=True)
