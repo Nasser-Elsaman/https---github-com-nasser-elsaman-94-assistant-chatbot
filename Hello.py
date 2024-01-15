@@ -25,22 +25,28 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 
 
 if selected == "Home":
-    st.title ("Welecome to LLMs-Based Personality Assessment.")
+    st.title ("Welecome to LLMs-Based Personality Assessment. :brain: :performing_arts: :bar_chart:")
     url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
-    st.write("This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??\nThe following are some main arguments for why the Mini-IPIP personality test could be a wise option: It is quicker to complete because it is a 20-item scale rather than the lengthy Big Five inventory. The user experience may be enhanced by this. In testing, the Mini-IPIP has shown strong psychometric qualities, including factorial validity, convergent validity with larger measures, and reliability. Therefore, despite its briefness, it properly assesses the Big Five variables.\n [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
-# - Its short duration makes it appropriate for use in research projects, screening, surveys, and other scenarios when evaluation time is restricted.
-# - It is available since it is free to use for non-commercial research purposes. 
-# - Wider utilisation is made possible by the availability of translations into other languages.
-# - It is a well-respected short scale, having been utilised and mentioned in hundreds of published investigations.
-    st.markdown("check out this [link](%s)" % url)
-    st.text ("")
-show_assessment = st.sidebar.toggle('Nasserelsaman/microsoft-finetuned-personality \n Activate Model for Assessment To Start')
+    st.text("- This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??")
+    st.text("* The following are some main arguments for why the Mini-IPIP personality test could be a wise option:")
+    st.text("1) It is a short 20-item scale compared to longer Big Five inventories, making it faster to complete. This can improve user experience.")
+    st.text ("2) In testing, the Mini-IPIP has shown strong psychometric qualities, including factorial validity, convergent validity with larger measures, and reliability. Therefore, despite its briefness, it properly assesses the Big Five variables.
+    st.text ("3) The brief length makes it suitable for situations where assessment time is limited, like surveys, research studies, or screening.
+    st.text ("4) It is a well-respected short scale, having been utilised and mentioned in hundreds of published investigations.
+    st.text ("- To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length.
+    st.text ("* For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality](%s)" % url)
+    st.divider()
+    st.text ("To start the assessment please activate model in the sidebar (Upper left arrow >)"
+             
+
+st.sidebar.text ("Activate Model To Start'")
+show_assessment = st.sidebar.toggle("Nasserelsaman/microsoft-finetuned-personality")
 
 # "My Fine-tuned model using The pretrained Model (Base Model) microsoft/MiniLM-L12-H384-uncased"
 
 if selected == "Project":
     if show_assessment == False:
-        st.write("Please activate the Model in the sidebar for Assessment first")
+        st.text ("_To start the assessment please activate model in the sidebar "Upper left arrow"_:arrow_forward:"
     else:
         with st.spinner('Loading...'):
             time.sleep(3)
