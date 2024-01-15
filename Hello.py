@@ -39,7 +39,7 @@ if selected == "Home":
     
     st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
 
-st.sidebar.write (":mortar_board: Activate Model To Start")
+st.sidebar.write (":ok: Activate Model To Start")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on the pretrained Model (Base Model):- [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
@@ -51,7 +51,7 @@ if selected == "Project":
             time.sleep(3)
         with st.spinner('In progress...'):
             time.sleep(2)
-        st.sidebar.write(':ok: Model Activated successfuly! Assessement Ready Now!')
+        st.sidebar.write(':balloon: Model Activated successfuly! Assessement Ready Now!')
         st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. Give a brief description of who you are today, not who you hope to become. Give a candid description of who you are in comparison to other persons you know who are around your age and of the same sex as you. After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         quest_link = "https://rockford.instructure.com/courses/8365/files/419203/download?verifier=dCgoMhAAmj7FnEqVb4mKBEHZ1ia3Uh4YCSBtwwLX&wrap=1"
         st.sidebar.write (":books: _To check the originate questions and how to calculate your score, check this PDF file [The Mini-IPIP Scale (Donnellan, Oswald, Baird, & Lucas, ...)._](%s)" %quest_link)
@@ -229,19 +229,21 @@ if selected == "Project":
             questionnaire()
         
 if selected == "About":
-    st.header(":mailbox: Get In Touch With Me!")
     st.divider()
+    st.header(":mortar_board: Overview")
+    st.write(":bookmark_tabs: Kindly note that this project is storing assessment data results for research purposes only and it is the third out of 3 projects. If you need to check the other 2 projects:-")
+    Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
+    st.write(":one: Rule-based Personality Assessment using Google Form and Google Script (IF-Then Rule) with the data stored in a Google Sheet for research purposes only [(link).](%s)" % Google_Form_link)
+    ml_link = "https://nasserelsaman.pythonanywhere.com/model-based"
+    st.write(":two: ML-based Personality Assessment using Flask, python, and its libraries to create a model, uploaded on pythonanywhere with The data stored in a Google Sheet for research purposes only [(link).](%s)" % ml_link)
+    st.divider()
+    st.header(":mailbox: Get In Touch With Me!")
     st.write(":calling: Phone Numbers:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
     st.write(":email: Emails:- nasser.elsaman1994@gmail.com / nasser.mohamed2012@feps.edu.eg.")
     st.write (":house_with_garden: Addresses:- El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. / El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
     st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com.")
     st.divider()
-    st.write(":bookmark_tabs: Kindly note that this project is storing assessment data results for research purposes only and it is the third out of 3 projects. If you need to check the other 2 projects:-")
-    Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
-    st.write(":one: Rule-based Personality Assessment using Google Form and Google Script (IF-Then Rule) with the data stored in a Google Sheet for research purposes only [(link).](%s)" % Google_Form_link)
-    ml_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write(":two: ML-based Personality Assessment using Flask, python, and its libraries to create a model, uploaded on pythonanywhere with The data stored in a Google Sheet for research purposes only [(link).](%s)" % ml_link)
 # Footer Format
 footer="""<style>
 a:link , a:visited{
