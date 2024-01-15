@@ -35,22 +35,27 @@ if selected == "Home":
     st.write (":four: It is a well-respected short scale, having been utilised and mentioned in hundreds of published investigations.")
     st.write (":white_check_mark: To sum up, the Mini-IPIP is a well-researched, reliable, and valuable brief Big Five assessment that may be a suitable option when simplicity and convenience of use are top concerns. Its correctness is supported by the facts, even with its short length.")
     st.write (":white_check_mark: For more details, please check this research paper:- [The Mini-IPIP Scales: Tiny-yet-Effective Measures of the Big Five Factors of Personality.](%s)" % url)
-    st.divider()
-    st.write (":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_:arrow_forward:")             
+    
+    st.write (":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")          
 
 st.sidebar.text ("Activate Model To Start'")
-show_assessment = st.sidebar.toggle("Nasserelsaman/microsoft-finetuned-personality")
+show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
-st.sidebar.text ("To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.] (%s)" % model_link)
+st.sidebar.write (":100: To Fine-tune my model; I depended on The pretrained Model (Base Model) [microsoft/MiniLM-L12-H384-uncased.] (%s)" % model_link)
 if selected == "Project":
     if show_assessment == False:
-        st.write(":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_:arrow_forward:")
+        st.write(":sparkles: _To start the assessment please activate model in the sidebar (Upper left arrow)_ :arrow_forward:")
     else:
         with st.spinner('Loading...'):
             time.sleep(3)
         with st.spinner('In progress...'):
             time.sleep(2)
-        st.sidebar.write('Model Activated successfuly! Assessement Ready Now!')
+        st.sidebar.write(':ok: Model Activated successfuly! Assessement Ready Now!')
+        st.sidebar.write (":cool: Instructions: The questions that characterize people's actions are listed now. 
+        Please score how well each question represents you using the scoring scale [Strongly Disagree - Disagree - Neutral - Agree - Strongly Agree]. 
+        Give a brief description of who you are today, not who you hope to become. 
+        Give a candid description of who you are in comparison to other persons you know who are around your age and of the same sex as you.
+        After carefully reading each question, please indicate to what extent you believe it characterizes you by placing an accurate choice.")
         
         def personality_detection(text, threshold=0.05, endpoint= 1.0):
             tokenizer = AutoTokenizer.from_pretrained("Nasserelsaman/microsoft-finetuned-personality",token="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")
