@@ -238,7 +238,7 @@ if selected == "About":
     
     st.write("Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [link.](%s)" % Google_Form_link)
     ML_link = "https://nasserelsaman.pythonanywhere.com/model-based"
-    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only. [ML-Based Personality Assessment](%s)" % ML_link)
+    st.write("ML-based Personality Assessment Using Flask, python and its libraries to create a model using Logistic Regression with 93% accuracy then uploaded the model on pythonanywhere, and The data stored in a Google Sheet for researching purposes only[link.](%s)" % ML_link)
 
 # Footer Format
 footer="""<style>
