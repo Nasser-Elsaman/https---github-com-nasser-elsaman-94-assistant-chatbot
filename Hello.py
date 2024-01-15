@@ -1,3 +1,5 @@
+# Start of the project
+
 import streamlit as st
 from streamlit_option_menu import option_menu
 import torch
@@ -231,11 +233,11 @@ if selected == "About":
     st.header(":mailbox: Get In Touch With Me!")
     st.divider()
     st.write(":calling: Phone Numbers:- (+2) 0155 385 6595 / (+2) 0128 205 4321.")
-    st.write(":email: Emails:- nasser.elsaman1994@gmail.com, nasser.mohamed2012@feps.edu.eg.")
-    st.write (":house_with_garden: Addresses:- :one: El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. :two: El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
+    st.write(":email: Emails:- nasser.elsaman1994@gmail.com / nasser.mohamed2012@feps.edu.eg.")
+    st.write (":house_with_garden: Addresses:- El Eshreen Street, ElSalam Area, Cairo Governorate, Egypt. / El Mostaqbal Area, Faisal District, Suez Governorate, Egypt.")
     st.write(":globe_with_meridians: Website:- https://elsamaninfo.wordpress.com.")
     st.divider()
-    st.write(":bookmark_tabs: Kindly note that this project of the third one from total 3 projects for researching purposes only and If you need to check the other 2 projects:-")
+    st.write(":bookmark_tabs: Kindly note that this project is storing assessment data results for research purposes only and it is the third one from total 3 projects. If you need to check the other 2 projects:-")
     Google_Form_link = "https://docs.google.com/forms/d/e/1FAIpQLSd6Cqq1uknZ27wMYVZsYhIu0asUz5sI4WQ8m4sXHKsdWlqfUA/viewform?pli=1"
     
     st.write(":one: Rule-based Personality Assessment Using Google Form and Google Script (IF-Then Rule) and The data stored in a Google Sheet for researching purposes only [link.](%s)" % Google_Form_link)
@@ -289,3 +291,5 @@ st.markdown("""
 } 
 </style>
 """, unsafe_allow_html=True)
+
+# End of the project
