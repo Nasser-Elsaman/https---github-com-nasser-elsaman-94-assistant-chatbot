@@ -28,7 +28,7 @@ selected = option_menu (menu_title=None, options= ["Home", "Project", "About"], 
 if selected == "Home":
     st.title ("Welecome to LLMs-Based Personality Assessment :brain: :bar_chart:")
     url = "https://www.researchgate.net/publication/7014171_The_Mini-IPIP_Scales_Tiny-yet-Effective_Measures_of_the_Big_Five_Factors_of_Personality"
-    st.write(":white_check_mark: This project is based on Mini IPIP personality measure, check out this article to know why I chose this assessment and how it is worth it??")
+    st.write(":white_check_mark: This project is based on The Mini IPIP personality measure, continue reading to know why I chose this assessment and how it is worth it.")
     st.write(":white_check_mark: The following are some main arguments for why the Mini-IPIP personality test could be a wise option:")
     st.write(":one: It is a short 20-item scale compared to longer Big Five inventories, making it faster to complete. This can improve user experience.")
     st.write(":two: In testing, the Mini-IPIP has shown strong psychometric qualities, including factorial validity, convergent validity with larger measures, and reliability. Therefore, despite its briefness, it properly assesses the Big Five variables.")
