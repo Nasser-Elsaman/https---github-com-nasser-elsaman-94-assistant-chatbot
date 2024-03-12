@@ -40,7 +40,6 @@ if selected == "Home":
     st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper Left Arrow)_ :arrow_forward:")          
 
 st.sidebar.write (":ok: Activate Model To Start:- ")
-# show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
 show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality", label="Activate Model")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on the pretrained Model (Base Model):- [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
@@ -171,8 +170,7 @@ if selected == "Project":
             for i, question in enumerate(questions, start=1):
                 st.markdown("--------------------------------------------------------------")
                 st.write(f"**{i}**. {question}")
-        
-                # answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", index=None, horizontal=True)
+                
                 answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", label=f"Question {i}", index=None, horizontal=True)
         
                 # Check if the current question needs reversing
