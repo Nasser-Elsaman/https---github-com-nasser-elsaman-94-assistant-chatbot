@@ -171,7 +171,7 @@ if selected == "Project":
                 st.markdown("--------------------------------------------------------------")
                 st.write(f"**{i}**. {question}")
                 
-                answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", label=f"Question {i}", index=None, horizontal=True)
+                answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", index=None, horizontal=True)
         
                 # Check if the current question needs reversing
                 if i in reverse_questions:
