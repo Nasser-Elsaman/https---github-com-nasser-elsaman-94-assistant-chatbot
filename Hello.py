@@ -40,7 +40,7 @@ if selected == "Home":
     st.write (":sparkles: _To start the assessment please make sure to activate model in the sidebar (Upper Left Arrow)_ :arrow_forward:")          
 
 st.sidebar.write (":ok: Activate Model To Start:- ")
-show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality")
+show_assessment = st.sidebar.toggle(":medal: Nasserelsaman/microsoft-finetuned-personality", label_visibility="visible")
 model_link = "https://huggingface.co/microsoft/MiniLM-L12-H384-uncased"
 st.sidebar.write (":100: To Fine-tune my model; I depended on the pretrained Model (Base Model):- [microsoft/MiniLM-L12-H384-uncased.](%s)" %model_link)
 my_model = "https://huggingface.co/Nasserelsaman/microsoft-finetuned-personality"
@@ -171,7 +171,7 @@ if selected == "Project":
                 st.markdown("--------------------------------------------------------------")
                 st.write(f"**{i}**. {question}")
                 
-                answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", index=None, horizontal=True)
+                answer = st.radio("", ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"], key=f"question_{i}", label_visibility="visible", index=None, horizontal=True)
         
                 # Check if the current question needs reversing
                 if i in reverse_questions:
@@ -200,7 +200,7 @@ if selected == "Project":
             else:
             # Display the button with the disabled state from session state
                 # submit_button = st.button("Submit", key="Submit", disabled=st.session_state.disabled)
-                submit_button = st.button("Submit", key="Submit", disabled=st.session_state.disabled)
+                submit_button = st.button("Submit", key="Submit", label_visibility="visible", disabled=st.session_state.disabled)
                 # Check if the button is clicked
                 if submit_button:
                     # Update session state to disable the button
