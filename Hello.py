@@ -13,7 +13,7 @@ import time
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("streamlit-ml-pa-06731684e124.json", scope)
 client = gspread.authorize(creds)
-spreadsheet = client.open("Streamlit LLMs Personality Assessment")  # Replace with your spreadsheet name
+spreadsheet = client.open("Streamlit ML Personality Assessment")  # Replace with your spreadsheet name
 
 # Sidebar
 st.sidebar.title(":hammer_and_wrench: Configuration")
